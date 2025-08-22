@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Guide - App Transporte</title>
+    <link rel="stylesheet" href="/src/styleguide.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="styleguide-section">
+            <h1 class="styleguide-title">Sistema de Diseño - App Transporte</h1>
+            <p class="text-muted">Guía de estilos visuales basada en los colores principales RGB(250,179,27) y RGB(43,43,43)</p>
+        </header>
+
+        <!-- Colores -->
+        <section class="styleguide-section">
+            <h2 class="styleguide-title">Paleta de Colores</h2>
+            
+            <h3>Colores Principales</h3>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-sample bg-primary text-secondary">
+                        Primario
+                    </div>
+                    <div class="color-info">
+                        <strong>Primary</strong><br>
+                        RGB(250,179,27)<br>
+                        <small>Acciones principales, énfasis</small>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample bg-secondary text-primary">
+                        Secundario
+                    </div>
+                    <div class="color-info">
+                        <strong>Secondary</strong><br>
+                        RGB(43,43,43)<br>
+                        <small>Textos, fondos oscuros</small>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample bg-white text-secondary border">
+                        Fondo
+                    </div>
+                    <div class="color-info">
+                        <strong>Background</strong><br>
+                        #FFFFFF<br>
+                        <small>Fondo principal</small>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample bg-light text-secondary">
+                        Superficie
+                    </div>
+                    <div class="color-info">
+                        <strong>Surface</strong><br>
+                        #F8F9FA<br>
+                        <small>Cards, superficies</small>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Colores Semánticos</h3>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-sample bg-success text-white">
+                        Éxito
+                    </div>
+                    <div class="color-info">
+                        <strong>Success</strong><br>
+                        #28A745<br>
+                        <small>Confirmaciones</small>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample bg-danger text-white">
+                        Peligro
+                    </div>
+                    <div class="color-info">
+                        <strong>Danger</strong><br>
+                        #DC3545<br>
+                        <small>Errores, eliminación</small>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample bg-warning text-secondary">
+                        Advertencia
+                    </div>
+                    <div class="color-info">
+                        <strong>Warning</strong><br>
+                        RGB(250,179,27)<br>
+                        <small>Precauciones</small>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample bg-info text-white">
+                        Información
+                    </div>
+                    <div class="color-info">
+                        <strong>Info</strong><br>
+                        #17A2B8<br>
+                        <small>Notificaciones</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navegación -->
+        <section class="styleguide-section">
+            <h2 class="styleguide-title">Barra de Navegación</h2>
+            
+            <!-- Navbar Desktop -->
+            <div class="component-preview">
+                <h3>Navegación Desktop</h3>
+                <nav class="navbar">
+                    <div class="navbar-container">
+                        <!-- Logo/Brand -->
+                        <a href="#" class="navbar-brand">
+                            <div class="navbar-logo">AT</div>
+                            <span>App Transporte</span>
+                        </a>
+                        
+                        <!-- Menú principal -->
+                        <ul class="navbar-menu">
+                            <li class="navbar-item">
+                                <a href="#" class="navbar-link active">Inicio</a>
+                            </li>
+                            <li class="navbar-item">
+                                <a href="#" class="navbar-link">Vehículos</a>
+                            </li>
+                            <li class="navbar-item navbar-dropdown">
+                                <a href="#" class="navbar-link navbar-dropdown-toggle">
+                                    Gestión
+                                </a>
+                                <div class="navbar-dropdown-menu">
+                                    <a href="#" class="navbar-dropdown-item">Conductores</a>
+                                    <a href="#" class="navbar-dropdown-item">Rutas</a>
+                                    <a href="#" class="navbar-dropdown-item">Mantenimiento</a>
+                                    <a href="#" class="navbar-dropdown-item">Reportes</a>
+                                </div>
+                            </li>
+                            <li class="navbar-item">
+                                <a href="#" class="navbar-link">Reportes</a>
+                            </li>
+                        </ul>
+                        
+                        <!-- Acciones -->
+                        <div class="navbar-actions">
+                            <!-- Búsqueda -->
+                            <div class="navbar-search">
+                                <input type="text" class="navbar-search-input" placeholder="Buscar...">
+                                <button class="navbar-search-btn">🔍</button>
+                            </div>
+                            
+                            <!-- Usuario -->
+                            <div class="navbar-user">
+                                <div class="navbar-user-avatar">JD</div>
+                                <span class="navbar-user-name hide-mobile">Juan Díaz</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Hamburguesa (solo móvil) -->
+                        <button class="hamburger" aria-label="Menú">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+            
+            <!-- Menú Móvil -->
+            <div class="component-preview mt-lg">
+                <h3>Menú Móvil (Vista previa)</h3>
+                <div class="mobile-preview-container">
+                    <div class="navbar-mobile active mobile-preview">
+                        <div class="navbar-mobile-header">
+                            <div class="navbar-brand">
+                                <div class="navbar-logo">AT</div>
+                                <span>App Transporte</span>
+                            </div>
+                        </div>
+                        <ul class="navbar-mobile-menu">
+                            <li class="navbar-mobile-item">
+                                <a href="#" class="navbar-mobile-link active">Inicio</a>
+                            </li>
+                            <li class="navbar-mobile-item">
+                                <a href="#" class="navbar-mobile-link">Vehículos</a>
+                            </li>
+                            <li class="navbar-mobile-item">
+                                <a href="#" class="navbar-mobile-link">Conductores</a>
+                            </li>
+                            <li class="navbar-mobile-item">
+                                <a href="#" class="navbar-mobile-link">Rutas</a>
+                            </li>
+                            <li class="navbar-mobile-item">
+                                <a href="#" class="navbar-mobile-link">Mantenimiento</a>
+                            </li>
+                            <li class="navbar-mobile-item">
+                                <a href="#" class="navbar-mobile-link">Reportes</a>
+                            </li>
+                            <li class="navbar-mobile-item">
+                                <a href="#" class="navbar-mobile-link">Configuración</a>
+                            </li>
+                            <li class="navbar-mobile-item">
+                                <a href="#" class="navbar-mobile-link">Cerrar Sesión</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="text-muted text-small mt-sm">El menú móvil se activa automáticamente en pantallas menores a 576px</p>
+            </div>
+            
+            <!-- Breadcrumb -->
+            <div class="component-preview mt-lg">
+                <h3>Breadcrumb (Migas de pan)</h3>
+                <nav class="breadcrumb">
+                    <div class="breadcrumb-item">
+                        <a href="#" class="breadcrumb-link">Inicio</a>
+                    </div>
+                    <div class="breadcrumb-item">
+                        <a href="#" class="breadcrumb-link">Vehículos</a>
+                    </div>
+                    <div class="breadcrumb-item">
+                        <a href="#" class="breadcrumb-link">Mantenimiento</a>
+                    </div>
+                    <div class="breadcrumb-item">
+                        <span class="breadcrumb-link">Detalle #1234</span>
+                    </div>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Tipografía -->
+        <section class="styleguide-section">
+            <h2 class="styleguide-title">Tipografía</h2>
+            <div class="component-preview">
+                <h1>Heading 1 - Título Principal</h1>
+                <h2>Heading 2 - Sección</h2>
+                <h3>Heading 3 - Subsección</h3>
+                <h4>Heading 4 - Apartado</h4>
+                <h5>Heading 5 - Detalle</h5>
+                <h6>Heading 6 - Mínimo</h6>
+                <p>Párrafo de texto normal con <a href="#">enlace de ejemplo</a> y <strong>texto en negrita</strong>.</p>
+                <p class="text-muted">Texto secundario o descriptivo con color atenuado.</p>
+                <p class="text-primary">Texto con color primario para énfasis especial.</p>
+            </div>
+        </section>
+
+        <!-- Botones -->
+        <section class="styleguide-section">
+            <h2 class="styleguide-title">Botones</h2>
+            <div class="component-preview">
+                <h3>Tamaños</h3>
+                <div class="d-flex gap-md flex-wrap align-items-center">
+                    <button class="btn btn-primary btn-small">Pequeño</button>
+                    <button class="btn btn-primary">Normal</button>
+                    <button class="btn btn-primary btn-large">Grande</button>
+                </div>
+                
+                <h3 class="mt-lg">Variantes</h3>
+                <div class="d-flex gap-md flex-wrap">
+                    <button class="btn btn-primary">Primario</button>
+                    <button class="btn btn-secondary">Secundario</button>
+                    <button class="btn btn-success">Éxito</button>
+                    <button class="btn btn-danger">Peligro</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formularios -->
+        <section class="styleguide-section">
+            <h2 class="styleguide-title">Formularios</h2>
+            <div class="component-preview">
+                <form>
+                    <div class="form-group">
+                        <label class="form-label" for="input-text">Campo de texto</label>
+                        <input type="text" class="form-input" id="input-text" placeholder="Ingrese texto">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="input-select">Selector</label>
+                        <select class="form-select" id="input-select">
+                            <option>Opción 1</option>
+                            <option>Opción 2</option>
+                            <option>Opción 3</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="input-textarea">Área de texto</label>
+                        <textarea class="form-textarea" id="input-textarea" rows="3" placeholder="Ingrese descripción"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="input-disabled">Campo deshabilitado</label>
+                        <input type="text" class="form-input" id="input-disabled" disabled value="No editable">
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Cards -->
+        <section class="styleguide-section">
+            <h2 class="styleguide-title">Cards</h2>
+            <div class="grid grid-cols-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Título de Card</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Contenido de la card con información relevante.</p>
+                        <button class="btn btn-primary btn-small">Acción</button>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Estadísticas</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="grid grid-cols-2">
+                            <div>
+                                <div class="text-muted text-small">Usuarios</div>
+                                <div class="text-primary text-2xl font-bold">1,234</div>
+                            </div>
+                            <div>
+                                <div class="text-muted text-small">Activos</div>
+                                <div class="text-secondary text-2xl font-bold">89%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tablas -->
+        <section class="styleguide-section">
+            <h2 class="styleguide-title">Tablas</h2>
+            <div class="component-preview">
+                <!-- Tabla normal para desktop -->
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>Juan Pérez</td>
+                                <td><span class="badge badge-success">Activo</span></td>
+                                <td>
+                                    <button class="btn btn-primary btn-small">Editar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>María García</td>
+                                <td><span class="badge badge-primary">Pendiente</span></td>
+                                <td>
+                                    <button class="btn btn-primary btn-small">Editar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>003</td>
+                                <td>Carlos López</td>
+                                <td><span class="badge badge-danger">Inactivo</span></td>
+                                <td>
+                                    <button class="btn btn-primary btn-small">Editar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Cards para móvil -->
+                <div class="table-mobile-cards">
+                    <div class="table-card">
+                        <div class="table-card-header">
+                            <span>ID: 001</span>
+                            <span class="badge badge-success">Activo</span>
+                        </div>
+                        <div class="table-card-body">
+                            <div class="table-card-row">
+                                <span class="table-card-label">Nombre</span>
+                                <span class="table-card-value">Juan Pérez</span>
+                            </div>
+                        </div>
+                        <div class="table-card-actions">
+                            <button class="btn btn-primary btn-small w-100">Editar</button>
+                        </div>
+                    </div>
+                    
+                    <div class="table-card">
+                        <div class="table-card-header">
+                            <span>ID: 002</span>
+                            <span class="badge badge-primary">Pendiente</span>
+                        </div>
+                        <div class="table-card-body">
+                            <div class="table-card-row">
+                                <span class="table-card-label">Nombre</span>
+                                <span class="table-card-value">María García</span>
+                            </div>
+                        </div>
+                        <div class="table-card-actions">
+                            <button class="btn btn-primary btn-small w-100">Editar</button>
+                        </div>
+                    </div>
+                    
+                    <div class="table-card">
+                        <div class="table-card-header">
+                            <span>ID: 003</span>
+                            <span class="badge badge-danger">Inactivo</span>
+                        </div>
+                        <div class="table-card-body">
+                            <div class="table-card-row">
+                                <span class="table-card-label">Nombre</span>
+                                <span class="table-card-value">Carlos López</span>
+                            </div>
+                        </div>
+                        <div class="table-card-actions">
+                            <button class="btn btn-primary btn-small w-100">Editar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-muted mt-md">
+                <small><strong>Nota:</strong> En dispositivos móviles (&lt;576px), la tabla se transforma automáticamente en cards para mejor visualización.</small>
+            </p>
+        </section>
+
+        <!-- Alertas -->
+        <section class="styleguide-section">
+            <h2 class="styleguide-title">Alertas</h2>
+            <div class="component-preview">
+                <div class="alert alert-info">
+                    <strong>Información:</strong> Este es un mensaje informativo.
+                </div>
+                <div class="alert alert-success">
+                    <strong>Éxito:</strong> La operación se completó correctamente.
+                </div>
+                <div class="alert alert-warning">
+                    <strong>Advertencia:</strong> Por favor revise los datos ingresados.
+                </div>
+                <div class="alert alert-error">
+                    <strong>Error:</strong> Ha ocurrido un problema al procesar la solicitud.
+                </div>
+            </div>
+        </section>
+
+        <!-- Badges -->
+        <section class="styleguide-section">
+            <h2 class="styleguide-title">Badges</h2>
+            <div class="component-preview">
+                <span class="badge badge-primary">Primario</span>
+                <span class="badge badge-secondary">Secundario</span>
+                <span class="badge badge-success">Éxito</span>
+                <span class="badge badge-danger">Peligro</span>
+            </div>
+        </section>
+
+        <!-- Grid System -->
+        <section class="styleguide-section">
+            <h2 class="styleguide-title">Sistema de Grid</h2>
+            <div class="component-preview">
+                <h3>1 Columna</h3>
+                <div class="grid grid-cols-1">
+                    <div class="example-grid-item">100%</div>
+                </div>
+                
+                <h3>2 Columnas</h3>
+                <div class="grid grid-cols-2">
+                    <div class="example-grid-item">50%</div>
+                    <div class="example-grid-item">50%</div>
+                </div>
+                
+                <h3>3 Columnas</h3>
+                <div class="grid grid-cols-3">
+                    <div class="example-grid-item">33.33%</div>
+                    <div class="example-grid-item">33.33%</div>
+                    <div class="example-grid-item">33.33%</div>
+                </div>
+                
+                <h3>4 Columnas</h3>
+                <div class="grid grid-cols-4">
+                    <div class="example-grid-item">25%</div>
+                    <div class="example-grid-item">25%</div>
+                    <div class="example-grid-item">25%</div>
+                    <div class="example-grid-item">25%</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Espaciado -->
+        <section class="styleguide-section">
+            <h2 class="styleguide-title">Sistema de Espaciado</h2>
+            <div class="component-preview">
+                <div class="spacing-demo p-xs mb-sm">Padding XS</div>
+                <div class="spacing-demo p-sm mb-sm">Padding SM</div>
+                <div class="spacing-demo p-md mb-sm">Padding MD</div>
+                <div class="spacing-demo p-lg mb-sm">Padding LG</div>
+                <div class="spacing-demo p-xl">Padding XL</div>
+            </div>
+        </section>
+
+        <!-- Animaciones -->
+        <section class="styleguide-section">
+            <h2 class="styleguide-title">Animaciones</h2>
+            <div class="component-preview">
+                <p>Los elementos tienen transiciones suaves al interactuar:</p>
+                <button class="btn btn-primary">Hover para ver transición</button>
+                <div class="card mt-md max-w-sm">
+                    <div class="card-header">
+                        <h3 class="card-title">Card con hover</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Pasa el cursor para ver el efecto de elevación.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="styleguide-section text-center">
+            <p class="text-muted">Sistema de Diseño - App Transporte</p>
+            <p class="text-muted">Colores principales: RGB(250,179,27) y RGB(43,43,43)</p>
+        </footer>
+    </div>
+</body>
+</html>
