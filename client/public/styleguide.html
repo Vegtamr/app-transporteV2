@@ -118,8 +118,7 @@
                     <div class="navbar-container">
                         <!-- Logo/Brand -->
                         <a href="#" class="navbar-brand">
-                            <div class="navbar-logo">AT</div>
-                            <span>App Transporte</span>
+                            <img src="/img/logo.png" alt="Logo" class="navbar-logo">
                         </a>
                         
                         <!-- Menú principal -->
@@ -148,12 +147,6 @@
                         
                         <!-- Acciones -->
                         <div class="navbar-actions">
-                            <!-- Búsqueda -->
-                            <div class="navbar-search">
-                                <input type="text" class="navbar-search-input" placeholder="Buscar...">
-                                <button class="navbar-search-btn">🔍</button>
-                            </div>
-                            
                             <!-- Usuario -->
                             <div class="navbar-user">
                                 <div class="navbar-user-avatar">JD</div>
@@ -178,8 +171,7 @@
                     <div class="navbar-mobile active mobile-preview">
                         <div class="navbar-mobile-header">
                             <div class="navbar-brand">
-                                <div class="navbar-logo">AT</div>
-                                <span>App Transporte</span>
+                                <img src="/img/logo.png" alt="Logo" class="navbar-logo">
                             </div>
                         </div>
                         <ul class="navbar-mobile-menu">
@@ -533,5 +525,43 @@
             <p class="text-muted">Colores principales: RGB(250,179,27) y RGB(43,43,43)</p>
         </footer>
     </div>
+    
+    <!-- Overlay para menú móvil -->
+    <div class="navbar-overlay"></div>
+    
+    <!-- Menú móvil real (fuera del ejemplo) -->
+    <div class="navbar-mobile">
+        <div class="navbar-mobile-header">
+            <div class="navbar-brand">
+                <img src="/img/logo.png" alt="Logo" class="navbar-logo">
+            </div>
+        </div>
+        <ul class="navbar-mobile-menu">
+            <li class="navbar-mobile-item">
+                <a href="#" class="navbar-mobile-link active">Inicio</a>
+            </li>
+            <li class="navbar-mobile-item">
+                <a href="#" class="navbar-mobile-link">Vehículos</a>
+            </li>
+            <li class="navbar-mobile-item">
+                <a href="#" class="navbar-mobile-link">Conductores</a>
+            </li>
+            <li class="navbar-mobile-item">
+                <a href="#" class="navbar-mobile-link">Rutas</a>
+            </li>
+            <li class="navbar-mobile-item">
+                <a href="#" class="navbar-mobile-link">Mantenimiento</a>
+            </li>
+            <li class="navbar-mobile-item">
+                <a href="#" class="navbar-mobile-link">Reportes</a>
+            </li>
+            <li class="navbar-mobile-item">
+                <a href="#" class="navbar-mobile-link">Configuración</a>
+            </li>
+        </ul>
+    </div>
+    
+    <!-- Script para navegación -->
+    <script src="/navbar.js"></script>
 </body>
 </html>
