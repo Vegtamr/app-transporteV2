@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 function Navigation() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <section className="section">
@@ -217,52 +218,7 @@ function Navigation() {
         </div>
       </div>
 
-      <div className="example-group">
-        <h3>Navbar Minimalista</h3>
-        <div className="navbar-minimal-demo">
-          <nav className="navbar-minimal">
-            <div className="navbar-minimal-brand">Brand</div>
-            <div className="navbar-minimal-links">
-              <a href="#" className="navbar-minimal-link active">Inicio</a>
-              <a href="#" className="navbar-minimal-link">Servicios</a>
-              <a href="#" className="navbar-minimal-link">Contacto</a>
-            </div>
-            <button className="btn btn-outline-primary btn-sm">
-              Acceder
-            </button>
-          </nav>
-        </div>
-      </div>
 
-      <div className="example-group">
-        <h3>Navbar con Búsqueda</h3>
-        <div className="navbar-search-demo">
-          <nav className="navbar-search">
-            <div className="navbar-search-brand">
-              <i className="fas fa-bus"></i>
-              FleetManager
-            </div>
-            
-            <div className="navbar-search-box">
-              <input 
-                type="search" 
-                className="navbar-search-input" 
-                placeholder="Buscar vehículos, rutas..."
-              />
-              <i className="fas fa-search navbar-search-icon"></i>
-            </div>
-
-            <div className="navbar-search-actions">
-              <button className="btn btn-primary">
-                <i className="fas fa-plus"></i> Nuevo
-              </button>
-              <button className="btn btn-icon btn-outline-primary">
-                <i className="fas fa-cog"></i>
-              </button>
-            </div>
-          </nav>
-        </div>
-      </div>
 
       <div className="example-group">
         <h3>Tabs de Navegación</h3>
@@ -298,12 +254,39 @@ function Navigation() {
       </div>
 
       <div className="example-group">
-        <h3>Navegación Lateral (Sidebar)</h3>
-        <div className="sidebar-demo">
-          <aside className="sidebar">
-            <h4 className="sidebar-title">
-              <i className="fas fa-th-large"></i> Panel
-            </h4>
+        <h3>Navegación Lateral Responsiva (Sidebar)</h3>
+        
+        {/* Botón para abrir sidebar */}
+        <button 
+          className="btn btn-primary"
+          onClick={() => setSidebarOpen(true)}
+          style={{ marginBottom: '1rem' }}
+        >
+          <i className="fas fa-bars"></i> Abrir Menú Lateral
+        </button>
+
+        <div className="sidebar-responsive-demo">
+          {/* Overlay */}
+          {sidebarOpen && (
+            <div 
+              className="sidebar-overlay"
+              onClick={() => setSidebarOpen(false)}
+            ></div>
+          )}
+
+          {/* Sidebar deslizante */}
+          <aside className={`sidebar-responsive ${sidebarOpen ? 'active' : ''}`}>
+            <div className="sidebar-header">
+              <h4 className="sidebar-title">
+                <i className="fas fa-th-large"></i> Panel
+              </h4>
+              <button 
+                className="sidebar-close"
+                onClick={() => setSidebarOpen(false)}
+              >
+                <i className="fas fa-times"></i>
+              </button>
+            </div>
             <nav className="sidebar-nav">
               <a href="#" className="sidebar-link active">
                 <i className="fas fa-tachometer-alt"></i>
@@ -333,8 +316,15 @@ function Navigation() {
               </a>
             </nav>
           </aside>
-          <div className="sidebar-content">
-            <p>Contenido Principal</p>
+
+          {/* Contenido principal */}
+          <div className="sidebar-main-content">
+            <div style={{ padding: '2rem', textAlign: 'center', background: 'var(--surface-color)', borderRadius: 'var(--radius-md)', minHeight: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <p style={{ color: 'var(--text-secondary)' }}>
+                Contenido Principal<br/>
+                <small>El sidebar se superpone sin desplazar el contenido</small>
+              </p>
+            </div>
           </div>
         </div>
       </div>
