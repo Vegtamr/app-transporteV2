@@ -26,28 +26,30 @@ function Forms() {
 
       <div className="example-group">
         <h3>Campos de Texto</h3>
-        <form className="form-example">
-          <div className="form-group">
-            <label htmlFor="nombre" className="form-label">Nombre Completo</label>
-            <input 
-              type="text" 
-              id="nombre" 
-              className="form-control" 
-              placeholder="Ingrese su nombre"
-            />
-          </div>
+        <div className="form-container">
+          <div className="form-card">
+            <form className="form-example">
+              <div className="form-group">
+                <label htmlFor="nombre" className="form-label">Nombre Completo</label>
+                <input 
+                  type="text" 
+                  id="nombre" 
+                  className="form-control" 
+                  placeholder="Ingrese su nombre"
+                />
+              </div>
 
-          <div className="form-group">
-            <label htmlFor="email" className="form-label">Correo Electrónico *</label>
-            <input 
-              type="email" 
-              id="email"
-              name="email"
-              className="form-control" 
-              placeholder="correo@ejemplo.com"
-              value={formData.email}
-              onChange={handleChange}
-              required
+              <div className="form-group">
+                <label htmlFor="email" className="form-label">Correo Electrónico *</label>
+                <input 
+                  type="email" 
+                  id="email"
+                  name="email"
+                  className="form-control" 
+                  placeholder="correo@ejemplo.com"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
             />
             <small className="form-text">Nunca compartiremos tu correo.</small>
           </div>
@@ -66,24 +68,28 @@ function Forms() {
               />
               <button 
                 type="button"
-                className="password-toggle"
+                className={`password-toggle ${showPassword ? 'active' : ''}`}
                 onClick={() => setShowPassword(!showPassword)}
+                title={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
+                aria-label={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
               >
                 <i className={`fas fa-eye${showPassword ? '-slash' : ''}`}></i>
               </button>
             </div>
           </div>
 
-          <div className="form-group">
-            <label htmlFor="telefono" className="form-label">Teléfono</label>
-            <input 
-              type="tel" 
-              id="telefono" 
-              className="form-control" 
-              placeholder="+56 9 1234 5678"
-            />
+              <div className="form-group">
+                <label htmlFor="telefono" className="form-label">Teléfono</label>
+                <input 
+                  type="tel" 
+                  id="telefono" 
+                  className="form-control" 
+                  placeholder="+56 9 1234 5678"
+                />
+              </div>
+            </form>
           </div>
-        </form>
+        </div>
       </div>
 
       <div className="example-group">

@@ -1,1 +1,5 @@
 - crear react router
+- corregir mala definición de nombre en las clases css
+- verificar, eliminar o adaptar clases css que no sean responsivas
+- implementar styleguide selector de hora y fecha
+- implementar styleguide para dropdown en campos input
