@@ -6,6 +6,7 @@ import Forms from '../components/styleguide/Forms';
 import Cards from '../components/styleguide/Cards';
 import Tables from '../components/styleguide/Tables';
 import Notifications from '../components/styleguide/Notifications';
+import Navigation from '../components/styleguide/Navigation';
 import DesignGuide from '../components/styleguide/DesignGuide';
 
 function Styleguide() {
@@ -19,6 +20,7 @@ function Styleguide() {
     { id: 'forms', label: 'Formularios', icon: 'fa-edit' },
     { id: 'cards', label: 'Cards', icon: 'fa-window-restore' },
     { id: 'tables', label: 'Tablas', icon: 'fa-table' },
+    { id: 'navigation', label: 'Navegación', icon: 'fa-compass' },
     { id: 'notifications', label: 'Notificaciones', icon: 'fa-bell' }
   ];
 
@@ -31,6 +33,7 @@ function Styleguide() {
       case 'forms': return <Forms />;
       case 'cards': return <Cards />;
       case 'tables': return <Tables />;
+      case 'navigation': return <Navigation />;
       case 'notifications': return <Notifications />;
       default: return <DesignGuide />;
     }
