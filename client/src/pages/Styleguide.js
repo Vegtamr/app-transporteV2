@@ -6,11 +6,13 @@ import Forms from '../components/styleguide/Forms';
 import Cards from '../components/styleguide/Cards';
 import Tables from '../components/styleguide/Tables';
 import Notifications from '../components/styleguide/Notifications';
+import DesignGuide from '../components/styleguide/DesignGuide';
 
 function Styleguide() {
-  const [activeTab, setActiveTab] = useState('colors');
+  const [activeTab, setActiveTab] = useState('guide');
 
   const tabs = [
+    { id: 'guide', label: 'Guía', icon: 'fa-book' },
     { id: 'colors', label: 'Colores', icon: 'fa-palette' },
     { id: 'typography', label: 'Tipografía', icon: 'fa-font' },
     { id: 'buttons', label: 'Botones', icon: 'fa-square' },
@@ -22,6 +24,7 @@ function Styleguide() {
 
   const renderContent = () => {
     switch(activeTab) {
+      case 'guide': return <DesignGuide />;
       case 'colors': return <ColorPalette />;
       case 'typography': return <Typography />;
       case 'buttons': return <Buttons />;
@@ -29,7 +32,7 @@ function Styleguide() {
       case 'cards': return <Cards />;
       case 'tables': return <Tables />;
       case 'notifications': return <Notifications />;
-      default: return <ColorPalette />;
+      default: return <DesignGuide />;
     }
   };
 

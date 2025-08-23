@@ -18,38 +18,52 @@ function Notifications() {
       <h2>Notificaciones</h2>
 
       <div className="example-group">
-        <h3>Alertas Estáticas</h3>
+        <h3>Alertas Minimalistas</h3>
         
-        <div className="notification notification-success">
-          <i className="fas fa-check-circle"></i>
-          <div className="notification-content">
-            <strong>¡Éxito!</strong> La operación se completó correctamente.
+        <div className="alert alert-success">
+          <i className="fas fa-check-circle alert-icon"></i>
+          <div className="alert-content">
+            <div className="alert-title">Operación Exitosa</div>
+            <div className="alert-message">Los cambios se guardaron correctamente.</div>
           </div>
-          <button className="close-btn">×</button>
         </div>
 
-        <div className="notification notification-info">
-          <i className="fas fa-info-circle"></i>
-          <div className="notification-content">
-            <strong>Información:</strong> Nuevo vehículo disponible en la flota.
+        <div className="alert alert-info">
+          <i className="fas fa-info-circle alert-icon"></i>
+          <div className="alert-content">
+            <div className="alert-title">Información</div>
+            <div className="alert-message">Nuevo vehículo disponible en la flota.</div>
           </div>
-          <button className="close-btn">×</button>
         </div>
 
-        <div className="notification notification-warning">
-          <i className="fas fa-exclamation-triangle"></i>
-          <div className="notification-content">
-            <strong>Advertencia:</strong> El vehículo #003 requiere mantenimiento pronto.
+        <div className="alert alert-warning">
+          <i className="fas fa-exclamation-triangle alert-icon"></i>
+          <div className="alert-content">
+            <div className="alert-title">Mantenimiento Requerido</div>
+            <div className="alert-message">El vehículo #003 necesita revisión en 500km.</div>
           </div>
-          <button className="close-btn">×</button>
         </div>
 
-        <div className="notification notification-danger">
-          <i className="fas fa-times-circle"></i>
-          <div className="notification-content">
-            <strong>Error:</strong> No se pudo completar la asignación de ruta.
+        <div className="alert alert-danger">
+          <i className="fas fa-times-circle alert-icon"></i>
+          <div className="alert-content">
+            <div className="alert-title">Error de Asignación</div>
+            <div className="alert-message">No se pudo completar la asignación de ruta.</div>
           </div>
-          <button className="close-btn">×</button>
+        </div>
+      </div>
+
+      <div className="example-group">
+        <h3>Skeleton Loaders</h3>
+        <p style={{ marginBottom: '1rem' }}>Estados de carga minimalistas:</p>
+        
+        <div className="skeleton skeleton-title"></div>
+        <div className="skeleton skeleton-text"></div>
+        <div className="skeleton skeleton-text" style={{ width: '80%' }}></div>
+        <div className="skeleton skeleton-text" style={{ width: '60%' }}></div>
+        
+        <div style={{ marginTop: '2rem' }}>
+          <div className="skeleton skeleton-card"></div>
         </div>
       </div>
 

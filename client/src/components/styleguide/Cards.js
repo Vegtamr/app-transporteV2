@@ -1,4 +1,5 @@
 import React from 'react';
+import { LazyImage } from '../../hooks/useLazyLoad';
 
 function Cards() {
   return (
@@ -189,12 +190,13 @@ function Cards() {
       </div>
 
       <div className="example-group">
-        <h3>Card con Imagen</h3>
+        <h3>Card con Imagen (Lazy Loading)</h3>
         <div className="card" style={{ maxWidth: '400px' }}>
-          <img 
+          <LazyImage 
             src="https://via.placeholder.com/400x200/2D54A6/ffffff?text=Vehículo" 
             className="card-img-top" 
             alt="Vehículo"
+            placeholder="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%23f8f9fa'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%236c757d' font-family='sans-serif'%3ECargando...%3C/text%3E%3C/svg%3E"
           />
           <div className="card-body">
             <h5 className="card-title">Nuevo Vehículo Disponible</h5>
@@ -202,8 +204,33 @@ function Cards() {
               Se ha agregado un nuevo bus a la flota. Modelo 2024 con capacidad 
               para 50 pasajeros y tecnología híbrida.
             </p>
-            <a href="#" className="btn btn-primary">Ver Especificaciones</a>
+            <button className="btn btn-primary">Ver Especificaciones</button>
           </div>
+        </div>
+        <p style={{ marginTop: '1rem', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
+          <i className="fas fa-info-circle"></i> La imagen se carga solo cuando está cerca del viewport
+        </p>
+      </div>
+
+      <div className="example-group">
+        <h3>Galería con Lazy Loading</h3>
+        <div className="card-grid">
+          {[1, 2, 3, 4, 5, 6].map(num => (
+            <div key={num} className="card">
+              <LazyImage
+                src={`https://via.placeholder.com/300x180/FAB31B/2B2B2B?text=Imagen+${num}`}
+                alt={`Imagen ${num}`}
+                className="card-img-top"
+                style={{ height: '180px', objectFit: 'cover' }}
+              />
+              <div className="card-body">
+                <h5 className="card-title">Elemento {num}</h5>
+                <p className="card-text">
+                  Ejemplo de lazy loading en galería.
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
