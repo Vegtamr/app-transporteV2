@@ -50,113 +50,120 @@ function Tables() {
 
       <div className="example-group">
         <h3>Tabla Básica</h3>
-        <table className="table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Nombre</th>
-              <th>Cargo</th>
-              <th>Departamento</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Juan Pérez</td>
-              <td>Conductor</td>
-              <td>Operaciones</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>María García</td>
-              <td>Supervisora</td>
-              <td>Logística</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carlos López</td>
-              <td>Mecánico</td>
-              <td>Mantenimiento</td>
-            </tr>
-          </tbody>
-        </table>
+        <div className="table-container">
+          <table className="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Cargo</th>
+                <th>Departamento</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Juan Pérez</td>
+                <td>Conductor</td>
+                <td>Operaciones</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>María García</td>
+                <td>Supervisora</td>
+                <td>Logística</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Carlos López</td>
+                <td>Mecánico</td>
+                <td>Mantenimiento</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div className="example-group">
         <h3>Tabla con Ordenamiento y Estados</h3>
-        <table className="table table-hover">
-          <thead>
-            <tr>
-              <th 
-                onClick={() => handleSort('id')}
-                style={{ cursor: 'pointer' }}
-              >
-                ID {sortConfig.key === 'id' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
-              </th>
-              <th 
-                onClick={() => handleSort('tipo')}
-                style={{ cursor: 'pointer' }}
-              >
-                Tipo {sortConfig.key === 'tipo' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
-              </th>
-              <th 
-                onClick={() => handleSort('modelo')}
-                style={{ cursor: 'pointer' }}
-              >
-                Modelo {sortConfig.key === 'modelo' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
-              </th>
-              <th>Placa</th>
-              <th 
-                onClick={() => handleSort('estado')}
-                style={{ cursor: 'pointer' }}
-              >
-                Estado {sortConfig.key === 'estado' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
-              </th>
-              <th 
-                onClick={() => handleSort('kilometraje')}
-                style={{ cursor: 'pointer' }}
-              >
-                Kilometraje {sortConfig.key === 'kilometraje' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
-              </th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            {sortedVehiculos.map(vehiculo => (
-              <tr key={vehiculo.id}>
-                <td>{vehiculo.id}</td>
-                <td>
-                  <i className={`fas fa-${vehiculo.tipo.toLowerCase()} text-primary`}></i> {vehiculo.tipo}
-                </td>
-                <td>{vehiculo.modelo}</td>
-                <td><code>{vehiculo.placa}</code></td>
-                <td>
-                  <span className={getStatusBadge(vehiculo.estado)}>
-                    {vehiculo.estado}
-                  </span>
-                </td>
-                <td>{vehiculo.kilometraje.toLocaleString()} km</td>
-                <td>
-                  <div className="btn-group">
-                    <button className="btn btn-sm btn-outline-primary">
-                      <i className="fas fa-eye"></i>
-                    </button>
-                    <button className="btn btn-sm btn-outline-secondary">
-                      <i className="fas fa-edit"></i>
-                    </button>
-                    <button className="btn btn-sm btn-outline-danger">
-                      <i className="fas fa-trash"></i>
-                    </button>
-                  </div>
-                </td>
+        <div className="table-container">
+          <table className="table table-hover">
+            <thead>
+              <tr>
+                <th 
+                  onClick={() => handleSort('id')}
+                  style={{ cursor: 'pointer', minWidth: '50px' }}
+                >
+                  ID {sortConfig.key === 'id' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                </th>
+                <th 
+                  onClick={() => handleSort('tipo')}
+                  style={{ cursor: 'pointer', minWidth: '80px' }}
+                >
+                  Tipo {sortConfig.key === 'tipo' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                </th>
+                <th 
+                  onClick={() => handleSort('modelo')}
+                  style={{ cursor: 'pointer', minWidth: '120px' }}
+                >
+                  Modelo {sortConfig.key === 'modelo' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                </th>
+                <th style={{ minWidth: '80px' }}>Placa</th>
+                <th 
+                  onClick={() => handleSort('estado')}
+                  style={{ cursor: 'pointer', minWidth: '100px' }}
+                >
+                  Estado {sortConfig.key === 'estado' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                </th>
+                <th 
+                  onClick={() => handleSort('kilometraje')}
+                  style={{ cursor: 'pointer', minWidth: '100px' }}
+                >
+                  Kilometraje {sortConfig.key === 'kilometraje' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                </th>
+                <th style={{ minWidth: '120px' }}>Acciones</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {sortedVehiculos.map(vehiculo => (
+                <tr key={vehiculo.id}>
+                  <td>{vehiculo.id}</td>
+                  <td style={{ whiteSpace: 'nowrap' }}>
+                    <i className={`fas fa-${vehiculo.tipo.toLowerCase()} text-primary`}></i> {vehiculo.tipo}
+                  </td>
+                  <td>{vehiculo.modelo}</td>
+                  <td><code>{vehiculo.placa}</code></td>
+                  <td>
+                    <span className={getStatusBadge(vehiculo.estado)}>
+                      {vehiculo.estado}
+                    </span>
+                  </td>
+                  <td style={{ whiteSpace: 'nowrap' }}>{vehiculo.kilometraje.toLocaleString()} km</td>
+                  <td>
+                    <div className="btn-group">
+                      <button className="btn btn-sm btn-outline-primary">
+                        <i className="fas fa-eye"></i>
+                      </button>
+                      <button className="btn btn-sm btn-outline-secondary">
+                        <i className="fas fa-edit"></i>
+                      </button>
+                      <button className="btn btn-sm btn-outline-danger">
+                        <i className="fas fa-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div className="example-group">
-        <h3>Tabla Responsive</h3>
+        <h3>Tabla con Scroll Horizontal (Móvil)</h3>
+        <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
+          <i className="fas fa-info-circle"></i> En dispositivos móviles, la tabla permite scroll horizontal
+        </p>
         <div className="table-responsive">
           <table className="table table-striped">
             <thead>
@@ -208,43 +215,130 @@ function Tables() {
       </div>
 
       <div className="example-group">
+        <h3>Tabla Responsiva en Formato Cards (Móvil)</h3>
+        <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
+          <i className="fas fa-mobile-alt"></i> Vista optimizada para dispositivos móviles
+        </p>
+        
+        {/* Vista Desktop */}
+        <div className="table-desktop">
+          <table className="table table-hover">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Vehículo</th>
+                <th>Conductor</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#001</td>
+                <td>Bus Mercedes-Benz</td>
+                <td>Juan Pérez</td>
+                <td><span className="badge badge-success">Activo</span></td>
+                <td>
+                  <button className="btn btn-sm btn-outline-primary">Ver</button>
+                </td>
+              </tr>
+              <tr>
+                <td>#015</td>
+                <td>Van Toyota Hiace</td>
+                <td>María García</td>
+                <td><span className="badge badge-warning">Mantenimiento</span></td>
+                <td>
+                  <button className="btn btn-sm btn-outline-primary">Ver</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        {/* Vista Mobile (Cards) */}
+        <div className="table-mobile">
+          <div className="mobile-card">
+            <div className="mobile-card-header">
+              <span className="mobile-card-id">#001</span>
+              <span className="badge badge-success">Activo</span>
+            </div>
+            <div className="mobile-card-body">
+              <div className="mobile-card-row">
+                <span className="mobile-card-label">Vehículo:</span>
+                <span className="mobile-card-value">Bus Mercedes-Benz</span>
+              </div>
+              <div className="mobile-card-row">
+                <span className="mobile-card-label">Conductor:</span>
+                <span className="mobile-card-value">Juan Pérez</span>
+              </div>
+            </div>
+            <div className="mobile-card-footer">
+              <button className="btn btn-sm btn-primary btn-block">Ver Detalles</button>
+            </div>
+          </div>
+
+          <div className="mobile-card">
+            <div className="mobile-card-header">
+              <span className="mobile-card-id">#015</span>
+              <span className="badge badge-warning">Mantenimiento</span>
+            </div>
+            <div className="mobile-card-body">
+              <div className="mobile-card-row">
+                <span className="mobile-card-label">Vehículo:</span>
+                <span className="mobile-card-value">Van Toyota Hiace</span>
+              </div>
+              <div className="mobile-card-row">
+                <span className="mobile-card-label">Conductor:</span>
+                <span className="mobile-card-value">María García</span>
+              </div>
+            </div>
+            <div className="mobile-card-footer">
+              <button className="btn btn-sm btn-primary btn-block">Ver Detalles</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="example-group">
         <h3>Tabla Compacta</h3>
-        <table className="table table-sm">
-          <thead>
-            <tr>
-              <th>Hora</th>
-              <th>Evento</th>
-              <th>Usuario</th>
-              <th>Detalles</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>09:15</td>
-              <td>Inicio de Ruta</td>
-              <td>jperez</td>
-              <td>Bus #001 - Ruta Norte</td>
-            </tr>
-            <tr>
-              <td>10:30</td>
-              <td>Parada Programada</td>
-              <td>mgarcia</td>
-              <td>Van #015 - Terminal 2</td>
-            </tr>
-            <tr>
-              <td>11:45</td>
-              <td>Reabastecimiento</td>
-              <td>clopez</td>
-              <td>Camión #008 - 180L Diesel</td>
-            </tr>
-            <tr>
-              <td>14:20</td>
-              <td>Fin de Ruta</td>
-              <td>jperez</td>
-              <td>Bus #001 - Sin incidentes</td>
-            </tr>
-          </tbody>
-        </table>
+        <div className="table-container">
+          <table className="table table-sm">
+            <thead>
+              <tr>
+                <th>Hora</th>
+                <th>Evento</th>
+                <th>Usuario</th>
+                <th>Detalles</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>09:15</td>
+                <td>Inicio de Ruta</td>
+                <td>jperez</td>
+                <td>Bus #001 - Ruta Norte</td>
+              </tr>
+              <tr>
+                <td>10:30</td>
+                <td>Parada Programada</td>
+                <td>mgarcia</td>
+                <td>Van #015 - Terminal 2</td>
+              </tr>
+              <tr>
+                <td>11:45</td>
+                <td>Reabastecimiento</td>
+                <td>clopez</td>
+                <td>Camión #008 - 180L Diesel</td>
+              </tr>
+              <tr>
+                <td>14:20</td>
+                <td>Fin de Ruta</td>
+                <td>jperez</td>
+                <td>Bus #001 - Sin incidentes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
   );

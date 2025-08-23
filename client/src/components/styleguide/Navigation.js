@@ -277,9 +277,7 @@ function Navigation() {
           {/* Sidebar deslizante */}
           <aside className={`sidebar-responsive ${sidebarOpen ? 'active' : ''}`}>
             <div className="sidebar-header">
-              <h4 className="sidebar-title">
-                <i className="fas fa-th-large"></i> Panel
-              </h4>
+              <img src="/img/logo.png" alt="Logo" className="sidebar-logo" />
               <button 
                 className="sidebar-close"
                 onClick={() => setSidebarOpen(false)}

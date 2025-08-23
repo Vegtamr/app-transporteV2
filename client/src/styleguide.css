@@ -445,6 +445,14 @@ a:hover {
 /* ========================================
    COMPONENTES - TABLAS
    ======================================== */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-md);
+}
+
 .table {
   width: 100%;
   border-collapse: collapse;
@@ -483,6 +491,122 @@ a:hover {
 .table-responsive {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  margin: 0 -1rem;
+  padding: 0 1rem;
+}
+
+.table-responsive::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: var(--surface-color);
+  border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Tablas responsivas: desktop vs mobile */
+.table-desktop {
+  display: block;
+}
+
+.table-mobile {
+  display: none;
+}
+
+/* Mobile Cards para tablas */
+.mobile-card {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.mobile-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--surface-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-card-id {
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: var(--font-size-lg);
+}
+
+.mobile-card-body {
+  padding: var(--space-md);
+}
+
+.mobile-card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.mobile-card-row:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.mobile-card-label {
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.mobile-card-value {
+  color: var(--text-color);
+  text-align: right;
+  font-weight: 500;
+}
+
+.mobile-card-footer {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--surface-color);
+  border-top: 1px solid var(--border-color);
+}
+
+/* Media query para tablas responsivas */
+@media (max-width: 768px) {
+  .table-desktop {
+    display: none;
+  }
+  
+  .table-mobile {
+    display: block;
+  }
+  
+  .table {
+    font-size: var(--font-size-sm);
+  }
+  
+  .table th,
+  .table td {
+    padding: var(--space-xs) var(--space-sm);
+  }
+  
+  .table-responsive {
+    margin: 0 -0.5rem;
+    padding: 0 0.5rem;
+  }
 }
 
 /* ========================================
@@ -1886,6 +2010,12 @@ a:focus-visible {
   justify-content: space-between;
   padding: var(--space-lg);
   border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
 }
 
 .sidebar-close {
