@@ -159,46 +159,6 @@
                 </nav>
             </div>
             
-            <!-- Menú Móvil -->
-            <div class="component-preview mt-lg">
-                <h3>Menú Móvil (Vista previa)</h3>
-                <div class="mobile-preview-container">
-                    <div class="navbar-mobile active mobile-preview">
-                        <div class="navbar-mobile-header">
-                            <div class="navbar-brand">
-                                <img src="/img/logo.png" alt="Logo" class="navbar-logo">
-                            </div>
-                        </div>
-                        <ul class="navbar-mobile-menu">
-                            <li class="navbar-mobile-item">
-                                <a href="#" class="navbar-mobile-link active">Inicio</a>
-                            </li>
-                            <li class="navbar-mobile-item">
-                                <a href="#" class="navbar-mobile-link">Vehículos</a>
-                            </li>
-                            <li class="navbar-mobile-item">
-                                <a href="#" class="navbar-mobile-link">Conductores</a>
-                            </li>
-                            <li class="navbar-mobile-item">
-                                <a href="#" class="navbar-mobile-link">Rutas</a>
-                            </li>
-                            <li class="navbar-mobile-item">
-                                <a href="#" class="navbar-mobile-link">Mantenimiento</a>
-                            </li>
-                            <li class="navbar-mobile-item">
-                                <a href="#" class="navbar-mobile-link">Reportes</a>
-                            </li>
-                            <li class="navbar-mobile-item">
-                                <a href="#" class="navbar-mobile-link">Configuración</a>
-                            </li>
-                            <li class="navbar-mobile-item">
-                                <a href="#" class="navbar-mobile-link">Cerrar Sesión</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <p class="text-muted text-small mt-sm">El menú móvil se activa automáticamente en pantallas menores a 576px</p>
-            </div>
             
             <!-- Breadcrumb -->
             <div class="component-preview mt-lg">
@@ -557,6 +517,44 @@
     </div>
     
     <!-- Script para navegación -->
+    <script>
+    // Crear menú móvil dinámicamente
+    document.addEventListener('DOMContentLoaded', function() {
+        // Crear estructura del menú móvil
+        const mobileMenu = document.createElement('div');
+        mobileMenu.className = 'navbar-mobile';
+        mobileMenu.innerHTML = `
+            <ul class="navbar-mobile-menu">
+                <li class="navbar-mobile-item">
+                    <a href="#" class="navbar-mobile-link">Inicio</a>
+                </li>
+                <li class="navbar-mobile-item">
+                    <a href="#" class="navbar-mobile-link">Vehículos</a>
+                </li>
+                <li class="navbar-mobile-item">
+                    <a href="#" class="navbar-mobile-link">Conductores</a>
+                </li>
+                <li class="navbar-mobile-item">
+                    <a href="#" class="navbar-mobile-link">Rutas</a>
+                </li>
+                <li class="navbar-mobile-item">
+                    <a href="#" class="navbar-mobile-link">Mantenimiento</a>
+                </li>
+                <li class="navbar-mobile-item">
+                    <a href="#" class="navbar-mobile-link">Reportes</a>
+                </li>
+            </ul>
+        `;
+        
+        // Crear overlay
+        const overlay = document.createElement('div');
+        overlay.className = 'navbar-overlay';
+        
+        // Agregar al body
+        document.body.appendChild(mobileMenu);
+        document.body.appendChild(overlay);
+    });
+    </script>
     <script src="/navbar.js"></script>
 </body>
 </html>

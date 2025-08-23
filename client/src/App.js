@@ -1,17 +1,30 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Styleguide from './pages/Styleguide';
+import './styleguide.css';
+
+function Home() {
+  return (
+    <div style={{ padding: '2rem', textAlign: 'center' }}>
+      <h1>App Transporte</h1>
+      <p>Sistema de Gestión de Transporte</p>
+      <Link to="/styleguide" className="btn btn-primary">
+        Ver Sistema de Diseño
+      </Link>
+    </div>
+  );
+}
 
 function App() {
   return (
-    <div style={{ textAlign: 'center' }}>
-      <header>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/styleguide" element={<Styleguide />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
