@@ -8,6 +8,7 @@ import Tables from '../components/styleguide/Tables';
 import Notifications from '../components/styleguide/Notifications';
 import Navigation from '../components/styleguide/Navigation';
 import DesignGuide from '../components/styleguide/DesignGuide';
+import DateTimePickers from '../components/styleguide/DateTimePickers';
 
 function Styleguide() {
   const [activeTab, setActiveTab] = useState('guide');
@@ -18,6 +19,7 @@ function Styleguide() {
     { id: 'typography', label: 'Tipografía', icon: 'fa-font' },
     { id: 'buttons', label: 'Botones', icon: 'fa-square' },
     { id: 'forms', label: 'Formularios', icon: 'fa-edit' },
+    { id: 'datetime', label: 'Fecha/Hora', icon: 'fa-calendar' },
     { id: 'cards', label: 'Cards', icon: 'fa-window-restore' },
     { id: 'tables', label: 'Tablas', icon: 'fa-table' },
     { id: 'navigation', label: 'Navegación', icon: 'fa-compass' },
@@ -31,6 +33,7 @@ function Styleguide() {
       case 'typography': return <Typography />;
       case 'buttons': return <Buttons />;
       case 'forms': return <Forms />;
+      case 'datetime': return <DateTimePickers />;
       case 'cards': return <Cards />;
       case 'tables': return <Tables />;
       case 'navigation': return <Navigation />;

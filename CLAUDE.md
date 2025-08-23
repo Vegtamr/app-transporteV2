@@ -3,3 +3,4 @@
 - verificar, eliminar o adaptar clases css que no sean responsivas
 - implementar styleguide selector de hora y fecha
 - implementar styleguide para dropdown en campos input
+- las alertas toast deben salir desde la parte superior

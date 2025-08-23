@@ -680,6 +680,109 @@ a:hover {
   color: var(--success-color);
 }
 
+/* ========================================
+   COMPONENTES - DATE TIME PICKERS
+   ======================================== */
+.date-range-container {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.date-range-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+}
+
+.input-icon-left {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.input-with-icon input[type="date"],
+.input-with-icon input[type="time"],
+.input-with-icon input[type="datetime-local"] {
+  padding-left: 40px;
+}
+
+/* Grid para fecha y hora */
+.datetime-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+
+/* Estilos personalizados para inputs de fecha/hora */
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"] {
+  cursor: pointer;
+  position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator,
+input[type="month"]::-webkit-calendar-picker-indicator,
+input[type="week"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+input[type="date"]:hover::-webkit-calendar-picker-indicator,
+input[type="time"]:hover::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]:hover::-webkit-calendar-picker-indicator,
+input[type="month"]:hover::-webkit-calendar-picker-indicator,
+input[type="week"]:hover::-webkit-calendar-picker-indicator {
+  opacity: 1;
+}
+
+/* Estilo cuando hay valor seleccionado */
+input[type="date"]:valid,
+input[type="time"]:valid,
+input[type="datetime-local"]:valid {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+/* Placeholder para inputs de fecha vacíos */
+input[type="date"]:invalid,
+input[type="time"]:invalid,
+input[type="datetime-local"]:invalid {
+  color: var(--text-secondary);
+}
+
+/* Responsive para móviles */
+@media (max-width: 576px) {
+  .date-range-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .date-range-separator {
+    transform: rotate(90deg);
+    height: 30px;
+    margin: var(--space-xs) 0;
+  }
+  
+  .datetime-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .form-check {
   display: flex;
   align-items: center;
