@@ -9,7 +9,7 @@ function Navigation() {
       <h2>Navegación</h2>
 
       <div className="example-group">
-        <h3>Navbar Principal</h3>
+        <h3>Navbar Principal con Menú Móvil</h3>
         <div className="navbar-demo">
           <nav className="navbar">
             <div className="navbar-container">
@@ -57,8 +57,61 @@ function Navigation() {
                 <span></span>
               </button>
             </div>
+
+            {/* Menú Móvil Desplegable */}
+            <div className={`navbar-mobile-menu ${mobileMenuOpen ? 'active' : ''}`}>
+              <ul className="navbar-mobile-list">
+                <li className="navbar-mobile-item">
+                  <a href="#inicio" className="navbar-mobile-link active">
+                    <i className="fas fa-home"></i>
+                    Inicio
+                  </a>
+                </li>
+                <li className="navbar-mobile-item">
+                  <a href="#vehiculos" className="navbar-mobile-link">
+                    <i className="fas fa-truck"></i>
+                    Vehículos
+                  </a>
+                </li>
+                <li className="navbar-mobile-item">
+                  <button 
+                    className="navbar-mobile-link navbar-mobile-dropdown-toggle"
+                    onClick={() => setActiveDropdown(activeDropdown === 'mobile-rutas' ? null : 'mobile-rutas')}
+                  >
+                    <i className="fas fa-route"></i>
+                    Rutas
+                    <i className={`fas fa-chevron-down ${activeDropdown === 'mobile-rutas' ? 'rotated' : ''}`}></i>
+                  </button>
+                  {activeDropdown === 'mobile-rutas' && (
+                    <div className="navbar-mobile-submenu">
+                      <a href="#rutas-activas" className="navbar-mobile-sublink">
+                        Rutas Activas
+                      </a>
+                      <a href="#rutas-programadas" className="navbar-mobile-sublink">
+                        Programadas
+                      </a>
+                      <a href="#rutas-historico" className="navbar-mobile-sublink">
+                        Histórico
+                      </a>
+                      <a href="#nueva-ruta" className="navbar-mobile-sublink">
+                        <i className="fas fa-plus"></i> Nueva Ruta
+                      </a>
+                    </div>
+                  )}
+                </li>
+                <li className="navbar-mobile-item">
+                  <a href="#reportes" className="navbar-mobile-link">
+                    <i className="fas fa-chart-bar"></i>
+                    Reportes
+                  </a>
+                </li>
+              </ul>
+            </div>
           </nav>
         </div>
+        <p style={{ marginTop: '1rem', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
+          <i className="fas fa-info-circle"></i> Redimensiona la ventana para ver el comportamiento responsivo
+        </p>
       </div>
 
       <div className="example-group">
