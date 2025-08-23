@@ -24,12 +24,16 @@ function Navigation() {
                 <li className="navbar-item">
                   <a href="#vehiculos" className="navbar-link">Vehículos</a>
                 </li>
-                <li className="navbar-item navbar-dropdown">
+                <li 
+                  className="navbar-item navbar-dropdown"
+                  onMouseEnter={() => setActiveDropdown('rutas')}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
                   <button 
-                    className="navbar-link"
-                    onClick={() => setActiveDropdown(activeDropdown === 'rutas' ? null : 'rutas')}
+                    className="navbar-link navbar-link-dropdown"
                   >
-                    Rutas <i className="fas fa-chevron-down"></i>
+                    <span>Rutas</span>
+                    <i className={`fas fa-caret-down ${activeDropdown === 'rutas' ? 'rotated' : ''}`}></i>
                   </button>
                   {activeDropdown === 'rutas' && (
                     <div className="navbar-dropdown-menu">
@@ -79,8 +83,11 @@ function Navigation() {
                     onClick={() => setActiveDropdown(activeDropdown === 'mobile-rutas' ? null : 'mobile-rutas')}
                   >
                     <i className="fas fa-route"></i>
-                    Rutas
-                    <i className={`fas fa-chevron-down ${activeDropdown === 'mobile-rutas' ? 'rotated' : ''}`}></i>
+                    <span>Rutas</span>
+                    <span className="dropdown-indicator">
+                      <span className="dropdown-badge">4</span>
+                      <i className={`fas fa-angle-right ${activeDropdown === 'mobile-rutas' ? 'rotated' : ''}`}></i>
+                    </span>
                   </button>
                   {activeDropdown === 'mobile-rutas' && (
                     <div className="navbar-mobile-submenu">
@@ -112,6 +119,102 @@ function Navigation() {
         <p style={{ marginTop: '1rem', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
           <i className="fas fa-info-circle"></i> Redimensiona la ventana para ver el comportamiento responsivo
         </p>
+      </div>
+
+      <div className="example-group">
+        <h3>Alternativas de Dropdown para Navbar Principal</h3>
+        <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', padding: '1rem', background: 'var(--primary-color)' }}>
+          
+          {/* Opción 1: Solo chevron sutil */}
+          <button className="navbar-link" style={{ color: 'var(--secondary-color)' }}>
+            Opción 1
+            <i className="fas fa-chevron-down" style={{ marginLeft: '4px', fontSize: '0.7rem', opacity: 0.5 }}></i>
+          </button>
+
+          {/* Opción 2: Con punto indicador */}
+          <button className="navbar-link" style={{ color: 'var(--secondary-color)' }}>
+            Opción 2
+            <span style={{ 
+              width: '4px', 
+              height: '4px', 
+              background: 'currentColor', 
+              borderRadius: '50%', 
+              marginLeft: '6px',
+              opacity: 0.5
+            }}></span>
+          </button>
+
+          {/* Opción 3: Con subrayado parcial */}
+          <button className="navbar-link" style={{ 
+            color: 'var(--secondary-color)',
+            borderBottom: '2px dashed rgba(43, 43, 43, 0.3)',
+            borderRadius: 0,
+            paddingBottom: '6px'
+          }}>
+            Opción 3
+          </button>
+
+          {/* Opción 4: Sin indicador (minimalista) */}
+          <button className="navbar-link" style={{ 
+            color: 'var(--secondary-color)',
+            fontWeight: '600'
+          }}>
+            Opción 4
+          </button>
+
+          {/* Opción 5: Con icono más */}
+          <button className="navbar-link" style={{ color: 'var(--secondary-color)' }}>
+            Opción 5
+            <i className="fas fa-plus" style={{ marginLeft: '6px', fontSize: '0.6rem', opacity: 0.4 }}></i>
+          </button>
+        </div>
+      </div>
+
+      <div className="example-group">
+        <h3>Alternativas de Indicadores Dropdown (Menú Móvil)</h3>
+        <div style={{ display: 'grid', gap: '1rem' }}>
+          
+          {/* Opción 1: Con badge contador */}
+          <button className="navbar-mobile-link" style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '8px' }}>
+            <i className="fas fa-folder"></i>
+            <span>Opción con Badge</span>
+            <span className="dropdown-indicator">
+              <span className="dropdown-badge">3</span>
+              <i className="fas fa-angle-right"></i>
+            </span>
+          </button>
+
+          {/* Opción 2: Con plus/minus */}
+          <button className="navbar-mobile-link" style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '8px' }}>
+            <i className="fas fa-box"></i>
+            <span>Opción Plus/Minus</span>
+            <span style={{ marginLeft: 'auto', width: '24px', height: '24px', background: 'rgba(0,0,0,0.05)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <i className="fas fa-plus" style={{ fontSize: '0.75rem' }}></i>
+            </span>
+          </button>
+
+          {/* Opción 3: Con dots */}
+          <button className="navbar-mobile-link" style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '8px' }}>
+            <i className="fas fa-layer-group"></i>
+            <span>Opción con Dots</span>
+            <i className="fas fa-ellipsis-h" style={{ marginLeft: 'auto', color: 'rgba(0,0,0,0.3)' }}></i>
+          </button>
+
+          {/* Opción 4: Minimalista con línea */}
+          <button className="navbar-mobile-link" style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '8px', borderRight: '3px solid black' }}>
+            <i className="fas fa-compass"></i>
+            <span>Opción con Línea</span>
+          </button>
+
+          {/* Opción 5: Con icono doble */}
+          <button className="navbar-mobile-link" style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '8px' }}>
+            <i className="fas fa-sitemap"></i>
+            <span>Opción Doble Chevron</span>
+            <span style={{ marginLeft: 'auto', color: 'rgba(0,0,0,0.3)' }}>
+              <i className="fas fa-angle-double-right"></i>
+            </span>
+          </button>
+        </div>
       </div>
 
       <div className="example-group">
