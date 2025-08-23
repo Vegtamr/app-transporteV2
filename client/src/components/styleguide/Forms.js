@@ -7,10 +7,32 @@ function Forms() {
     select: '',
     checkbox: false,
     radio: '',
-    textarea: ''
+    textarea: '',
+    address: ''
   });
 
   const [showPassword, setShowPassword] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedAddress, setSelectedAddress] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Simular direcciones de un servidor
+  const mockAddresses = [
+    { id: 1, street: 'Av. Libertador Bernardo O\'Higgins 1234', city: 'Santiago', postal: '8320000' },
+    { id: 2, street: 'Av. Providencia 2594', city: 'Providencia', postal: '7500000' },
+    { id: 3, street: 'Av. Apoquindo 3000', city: 'Las Condes', postal: '7550000' },
+    { id: 4, street: 'Av. Vicuña Mackenna 4860', city: 'Macul', postal: '7820000' },
+    { id: 5, street: 'Av. Pedro de Valdivia 305', city: 'Providencia', postal: '7500000' },
+    { id: 6, street: 'Av. Los Leones 1095', city: 'Providencia', postal: '7510000' },
+    { id: 7, street: 'Av. Manuel Montt 1725', city: 'Providencia', postal: '7500000' },
+    { id: 8, street: 'Av. Irarrázaval 3255', city: 'Ñuñoa', postal: '7750000' }
+  ];
+
+  const filteredAddresses = mockAddresses.filter(addr => 
+    addr.street.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    addr.city.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -93,9 +115,120 @@ function Forms() {
       </div>
 
       <div className="example-group">
-        <h3>Selectores</h3>
+        <h3>Selectores y Autocomplete</h3>
+        
         <div className="form-group">
-          <label htmlFor="vehiculo" className="form-label">Tipo de Vehículo</label>
+          <label htmlFor="address-search" className="form-label">
+            Buscar Dirección (Autocomplete)
+          </label>
+          <div className="autocomplete-wrapper">
+            <div className="input-with-icon">
+              <input
+                type="text"
+                id="address-search"
+                className="form-control"
+                placeholder="Escriba para buscar direcciones..."
+                value={searchTerm}
+                title={searchTerm.length > 40 ? searchTerm : ''}
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                  setShowDropdown(true);
+                  // Simular carga desde servidor
+                  if (e.target.value.length > 2) {
+                    setIsLoading(true);
+                    setTimeout(() => setIsLoading(false), 500);
+                  }
+                }}
+                onFocus={() => setShowDropdown(true)}
+                onBlur={() => setTimeout(() => setShowDropdown(false), 300)}
+              />
+              {isLoading && (
+                <div className="input-icon-right">
+                  <i className="fas fa-spinner fa-spin"></i>
+                </div>
+              )}
+              {!isLoading && searchTerm && (
+                <button 
+                  className="input-clear-btn"
+                  onClick={() => {
+                    setSearchTerm('');
+                    setSelectedAddress('');
+                  }}
+                  type="button"
+                >
+                  <i className="fas fa-times"></i>
+                </button>
+              )}
+            </div>
+            
+            {showDropdown && searchTerm.length > 0 && (
+              <div className="autocomplete-dropdown">
+                {isLoading ? (
+                  <div className="dropdown-item-loading">
+                    <i className="fas fa-spinner fa-spin"></i>
+                    <span>Buscando direcciones...</span>
+                  </div>
+                ) : filteredAddresses.length > 0 ? (
+                  filteredAddresses.map(addr => (
+                    <div
+                      key={addr.id}
+                      className="dropdown-item"
+                      onMouseDown={(e) => e.preventDefault()}
+                      onClick={() => {
+                        setSearchTerm(addr.street);
+                        setSelectedAddress(`${addr.street}, ${addr.city}`);
+                        setShowDropdown(false);
+                      }}
+                    >
+                      <div className="dropdown-item-icon">
+                        <i className="fas fa-map-marker-alt"></i>
+                      </div>
+                      <div className="dropdown-item-content">
+                        <div className="dropdown-item-title">{addr.street}</div>
+                        <div className="dropdown-item-subtitle">
+                          {addr.city} - CP: {addr.postal}
+                        </div>
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <div className="dropdown-item-empty">
+                    <i className="fas fa-exclamation-circle"></i>
+                    <span>No se encontraron direcciones</span>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+          {selectedAddress && (
+            <small className="form-text text-success">
+              <i className="fas fa-check-circle"></i> Dirección seleccionada: {selectedAddress}
+            </small>
+          )}
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="long-text-demo" className="form-label">
+            Ejemplo con Texto Largo (Demo visual)
+          </label>
+          <div className="input-with-icon">
+            <input
+              type="text"
+              id="long-text-demo"
+              className="form-control"
+              value="Av. Libertador Bernardo O'Higgins 1234, Santiago Centro, Región Metropolitana, Chile - Código Postal 8320000"
+              readOnly
+              title="Av. Libertador Bernardo O'Higgins 1234, Santiago Centro, Región Metropolitana, Chile - Código Postal 8320000"
+            />
+            <span className="input-fade-overlay"></span>
+          </div>
+          <small className="form-text">
+            <i className="fas fa-info-circle"></i> El texto largo se trunca con ellipsis. Al hacer focus, se muestra completo.
+          </small>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="vehiculo" className="form-label">Tipo de Vehículo (Select tradicional)</label>
           <select 
             id="vehiculo" 
             name="select"
