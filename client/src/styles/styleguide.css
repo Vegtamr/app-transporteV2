@@ -38,6 +38,13 @@
 @import './components/logo.css';          /* Logo component */
 
 /* ========================================
+   4. PÁGINAS
+   Estilos específicos de páginas
+   ======================================== */
+@import './pages/login.css';              /* Página de login */
+@import './pages/register.css';           /* Página de registro */
+
+/* ========================================
    ESTILOS ESPECÍFICOS DEL STYLEGUIDE
    Solo para la página de demostración
    ======================================== */
