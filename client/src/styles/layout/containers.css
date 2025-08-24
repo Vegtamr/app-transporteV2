@@ -1,0 +1,269 @@
+/* ========================================
+   LAYOUT - CONTENEDORES
+   Contenedores y layouts principales
+   ======================================== */
+
+/* ========================================
+   CONTAINER RESPONSIVO
+   ======================================== */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+}
+
+@media (min-width: 576px) {
+  .container { max-width: 540px; }
+}
+
+@media (min-width: 768px) {
+  .container { max-width: 720px; }
+}
+
+@media (min-width: 992px) {
+  .container { max-width: 960px; }
+}
+
+@media (min-width: 1200px) {
+  .container { max-width: 1140px; }
+}
+
+@media (min-width: 1400px) {
+  .container { max-width: 1320px; }
+}
+
+/* ========================================
+   CONTENEDORES DE SECCIONES
+   ======================================== */
+.surface-padded-section {
+  margin-bottom: var(--space-xl);
+  padding: var(--space-lg);
+  background: var(--surface-color);
+  border-radius: 8px;
+}
+
+.showcase-container {
+  padding: var(--space-lg);
+  background: var(--surface-color);
+  border-radius: var(--radius-lg);
+  margin: var(--space-md) 0;
+}
+
+.padded-bordered-block {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  margin: var(--space-sm) 0;
+}
+
+/* ========================================
+   LAYOUT PRINCIPAL
+   ======================================== */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: var(--space-lg);
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ========================================
+   CONTENEDOR DEL STYLEGUIDE
+   ======================================== */
+.styleguide-container {
+  padding: var(--space-lg);
+}
+
+.styleguide-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 2px solid var(--border-color);
+  background: var(--gradient-subtle);
+}
+
+.styleguide-header h1 {
+  color: var(--primary-color);
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--space-sm);
+}
+
+.styleguide-header p {
+  color: var(--text-secondary);
+  font-size: var(--font-size-lg);
+}
+
+.styleguide-content {
+  margin-top: var(--space-xl);
+}
+
+/* ========================================
+   GRIDS RESPONSIVOS
+   ======================================== */
+.grid {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Grid auto-fit responsivo */
+.grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-md);
+}
+
+.grid-auto-fill {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+
+/* ========================================
+   CONTENEDORES FLEXBOX
+   ======================================== */
+.flex-container {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.justify-start { justify-content: flex-start; }
+.justify-center { justify-content: center; }
+.justify-end { justify-content: flex-end; }
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+.justify-evenly { justify-content: space-evenly; }
+
+.align-start { align-items: flex-start; }
+.align-center { align-items: center; }
+.align-end { align-items: flex-end; }
+.align-stretch { align-items: stretch; }
+.align-baseline { align-items: baseline; }
+
+/* ========================================
+   SECCIONES Y ARTÍCULOS
+   ======================================== */
+.section {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section h2 {
+  color: var(--secondary-color);
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.section h3 {
+  color: var(--secondary-color);
+  font-size: var(--font-size-xl);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-md);
+}
+
+/* ========================================
+   ESPACIADO Y MARGENES
+   ======================================== */
+.space-y-xs > * + * { margin-top: var(--space-xs); }
+.space-y-sm > * + * { margin-top: var(--space-sm); }
+.space-y-md > * + * { margin-top: var(--space-md); }
+.space-y-lg > * + * { margin-top: var(--space-lg); }
+.space-y-xl > * + * { margin-top: var(--space-xl); }
+
+.space-x-xs > * + * { margin-left: var(--space-xs); }
+.space-x-sm > * + * { margin-left: var(--space-sm); }
+.space-x-md > * + * { margin-left: var(--space-md); }
+.space-x-lg > * + * { margin-left: var(--space-lg); }
+.space-x-xl > * + * { margin-left: var(--space-xl); }
+
+/* ========================================
+   CONTENEDORES CON BORDES Y SOMBRAS
+   ======================================== */
+.bordered {
+  border: 1px solid var(--border-color);
+}
+
+.rounded { border-radius: var(--radius-md); }
+.rounded-sm { border-radius: var(--radius-sm); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-xl { border-radius: var(--radius-xl); }
+
+.shadow-none { box-shadow: none; }
+.shadow-xs { box-shadow: var(--shadow-xs); }
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-xl { box-shadow: var(--shadow-xl); }
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  .main-content {
+    padding: var(--space-md);
+  }
+  
+  .styleguide-container {
+    padding: var(--space-md);
+  }
+  
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .grid-auto-fit {
+    grid-template-columns: 1fr;
+  }
+  
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -9,7 +9,7 @@ function Navigation() {
     <section className="section">
       <h2>Navegación</h2>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Navbar Principal con Menú Móvil</h3>
         <div className="navbar-demo">
           <nav className="navbar">
@@ -122,7 +122,7 @@ function Navigation() {
         </p>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Alternativas de Dropdown para Navbar Principal</h3>
         <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', padding: '1rem', background: 'var(--primary-color)' }}>
           
@@ -171,7 +171,7 @@ function Navigation() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Alternativas de Indicadores Dropdown (Menú Móvil)</h3>
         <div style={{ display: 'grid', gap: '1rem' }}>
           
@@ -220,7 +220,7 @@ function Navigation() {
 
 
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Tabs de Navegación</h3>
         <div className="tabs">
           <button className="tab-item active">
@@ -242,7 +242,7 @@ function Navigation() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Breadcrumb</h3>
         <nav className="breadcrumb">
           <a href="#home" className="breadcrumb-link">Inicio</a>
@@ -253,7 +253,7 @@ function Navigation() {
         </nav>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Navegación Lateral Responsiva (Sidebar)</h3>
         
         {/* Botón para abrir sidebar */}
@@ -327,7 +327,7 @@ function Navigation() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Pagination</h3>
         <nav className="pagination">
           <button className="pagination-item" disabled>
@@ -344,7 +344,7 @@ function Navigation() {
         </nav>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Stepper (Pasos)</h3>
         <div className="stepper">
           <div className="stepper-item completed">

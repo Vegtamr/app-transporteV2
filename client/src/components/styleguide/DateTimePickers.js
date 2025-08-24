@@ -23,7 +23,7 @@ function DateTimePickers() {
     <section className="section">
       <h2>Selectores de Fecha y Hora - React DatePicker</h2>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Selectores Básicos</h3>
         
         <div className="form-group">
@@ -92,7 +92,7 @@ function DateTimePickers() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Selectores con Restricciones</h3>
         
         <div className="form-group">
@@ -158,7 +158,7 @@ function DateTimePickers() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Selectores Avanzados</h3>
         
         <div className="form-group">
@@ -226,7 +226,7 @@ function DateTimePickers() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Calendario Inline</h3>
         <div className="form-group">
           <label className="form-label">
@@ -257,7 +257,7 @@ function DateTimePickers() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Personalización Visual</h3>
         
         <div className="form-group">

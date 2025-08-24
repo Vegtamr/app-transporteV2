@@ -46,7 +46,7 @@ function Forms() {
     <section className="section">
       <h2>Formularios</h2>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Campos de Texto</h3>
         <div className="form-container">
           <div className="form-card">
@@ -114,7 +114,7 @@ function Forms() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Selectores y Autocomplete</h3>
         
         <div className="form-group">
@@ -255,7 +255,7 @@ function Forms() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Checkboxes y Radios</h3>
         <div className="form-group">
           <label className="form-label">Servicios Adicionales</label>
@@ -335,7 +335,7 @@ function Forms() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Área de Texto</h3>
         <div className="form-group">
           <label htmlFor="observaciones" className="form-label">Observaciones</label>
@@ -351,7 +351,7 @@ function Forms() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Campos con Validación</h3>
         <div className="form-group">
           <label className="form-label">Campo Válido</label>
@@ -366,10 +366,10 @@ function Forms() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Formulario Completo</h3>
         <form className="card">
-          <div className="card-body">
+          <div className="card-content">
             <h4>Registro de Conductor</h4>
             <div className="form-row">
               <div className="form-group col-md-6">

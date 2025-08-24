@@ -6,7 +6,7 @@ function Cards() {
     <section className="section">
       <h2>Cards</h2>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Card Básica</h3>
         <div className="card">
           <div className="card-body">
@@ -20,14 +20,14 @@ function Cards() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Cards de Vehículos</h3>
         <div className="card-grid">
           <div className="card">
-            <div className="card-header">
+            <div className="card-heading">
               <span className="badge badge-success">Activo</span>
             </div>
-            <div className="card-body">
+            <div className="card-content">
               <div className="vehicle-icon">
                 <i className="fas fa-bus fa-3x text-primary"></i>
               </div>
@@ -49,20 +49,20 @@ function Cards() {
               </div>
             </div>
             <div className="card-footer">
-              <button className="btn btn-sm btn-outline-primary">
+              <button className="btn btn-size-sm btn-outline-primary">
                 <i className="fas fa-eye"></i> Ver Detalles
               </button>
-              <button className="btn btn-sm btn-outline-secondary">
+              <button className="btn btn-size-sm btn-outline-secondary">
                 <i className="fas fa-route"></i> Asignar Ruta
               </button>
             </div>
           </div>
 
           <div className="card">
-            <div className="card-header">
+            <div className="card-heading">
               <span className="badge badge-warning">Mantenimiento</span>
             </div>
-            <div className="card-body">
+            <div className="card-content">
               <div className="vehicle-icon">
                 <i className="fas fa-van-shuttle fa-3x text-secondary"></i>
               </div>
@@ -84,17 +84,17 @@ function Cards() {
               </div>
             </div>
             <div className="card-footer">
-              <button className="btn btn-sm btn-warning btn-block">
+              <button className="btn btn-size-sm btn-warning btn-block">
                 <i className="fas fa-wrench"></i> En Mantenimiento
               </button>
             </div>
           </div>
 
           <div className="card">
-            <div className="card-header">
+            <div className="card-heading">
               <span className="badge badge-danger">Inactivo</span>
             </div>
-            <div className="card-body">
+            <div className="card-content">
               <div className="vehicle-icon">
                 <i className="fas fa-truck fa-3x text-gray"></i>
               </div>
@@ -116,7 +116,7 @@ function Cards() {
               </div>
             </div>
             <div className="card-footer">
-              <button className="btn btn-sm btn-danger btn-block" disabled>
+              <button className="btn btn-size-sm btn-danger btn-block" disabled>
                 <i className="fas fa-times"></i> Fuera de Servicio
               </button>
             </div>
@@ -124,11 +124,11 @@ function Cards() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Card de Estadísticas</h3>
         <div className="stats-grid">
           <div className="card stat-card">
-            <div className="card-body">
+            <div className="card-content">
               <div className="stat-icon bg-primary">
                 <i className="fas fa-car"></i>
               </div>
@@ -143,7 +143,7 @@ function Cards() {
           </div>
 
           <div className="card stat-card">
-            <div className="card-body">
+            <div className="card-content">
               <div className="stat-icon bg-success">
                 <i className="fas fa-route"></i>
               </div>
@@ -158,7 +158,7 @@ function Cards() {
           </div>
 
           <div className="card stat-card">
-            <div className="card-body">
+            <div className="card-content">
               <div className="stat-icon bg-warning">
                 <i className="fas fa-gas-pump"></i>
               </div>
@@ -173,7 +173,7 @@ function Cards() {
           </div>
 
           <div className="card stat-card">
-            <div className="card-body">
+            <div className="card-content">
               <div className="stat-icon bg-info">
                 <i className="fas fa-users"></i>
               </div>
@@ -189,7 +189,7 @@ function Cards() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Card con Imagen (Lazy Loading)</h3>
         <div className="card" style={{ maxWidth: '400px' }}>
           <LazyImage 
@@ -212,7 +212,7 @@ function Cards() {
         </p>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Galería con Lazy Loading</h3>
         <div className="card-grid">
           {[1, 2, 3, 4, 5, 6].map(num => (
@@ -223,7 +223,7 @@ function Cards() {
                 className="card-img-top"
                 style={{ height: '180px', objectFit: 'cover' }}
               />
-              <div className="card-body">
+              <div className="card-content">
                 <h5 className="card-title">Elemento {num}</h5>
                 <p className="card-text">
                   Ejemplo de lazy loading en galería.

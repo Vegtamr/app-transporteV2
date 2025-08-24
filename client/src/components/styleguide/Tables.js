@@ -48,7 +48,7 @@ function Tables() {
     <section className="section">
       <h2>Tablas</h2>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Tabla Básica</h3>
         <div className="table-container">
           <table className="table">
@@ -84,7 +84,7 @@ function Tables() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Tabla con Ordenamiento y Estados</h3>
         <div className="table-container">
           <table className="table table-hover">
@@ -141,13 +141,13 @@ function Tables() {
                   <td style={{ whiteSpace: 'nowrap' }}>{vehiculo.kilometraje.toLocaleString()} km</td>
                   <td>
                     <div className="btn-group">
-                      <button className="btn btn-sm btn-outline-primary">
+                      <button className="btn btn-size-sm btn-outline-primary">
                         <i className="fas fa-eye"></i>
                       </button>
-                      <button className="btn btn-sm btn-outline-secondary">
+                      <button className="btn btn-size-sm btn-outline-secondary">
                         <i className="fas fa-edit"></i>
                       </button>
-                      <button className="btn btn-sm btn-outline-danger">
+                      <button className="btn btn-size-sm btn-outline-danger">
                         <i className="fas fa-trash"></i>
                       </button>
                     </div>
@@ -159,7 +159,7 @@ function Tables() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Tabla con Scroll Horizontal (Móvil)</h3>
         <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
           <i className="fas fa-info-circle"></i> En dispositivos móviles, la tabla permite scroll horizontal
@@ -214,7 +214,7 @@ function Tables() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Tabla Responsiva en Formato Cards (Móvil)</h3>
         <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
           <i className="fas fa-mobile-alt"></i> Vista optimizada para dispositivos móviles
@@ -239,7 +239,7 @@ function Tables() {
                 <td>Juan Pérez</td>
                 <td><span className="badge badge-success">Activo</span></td>
                 <td>
-                  <button className="btn btn-sm btn-outline-primary">Ver</button>
+                  <button className="btn btn-size-sm btn-outline-primary">Ver</button>
                 </td>
               </tr>
               <tr>
@@ -248,7 +248,7 @@ function Tables() {
                 <td>María García</td>
                 <td><span className="badge badge-warning">Mantenimiento</span></td>
                 <td>
-                  <button className="btn btn-sm btn-outline-primary">Ver</button>
+                  <button className="btn btn-size-sm btn-outline-primary">Ver</button>
                 </td>
               </tr>
             </tbody>
@@ -258,48 +258,48 @@ function Tables() {
         {/* Vista Mobile (Cards) */}
         <div className="table-mobile">
           <div className="mobile-card">
-            <div className="mobile-card-header">
+            <div className="mobile-card-heading">
               <span className="mobile-card-id">#001</span>
               <span className="badge badge-success">Activo</span>
             </div>
-            <div className="mobile-card-body">
-              <div className="mobile-card-row">
+            <div className="mobile-card-content">
+              <div className="mobile-card-field">
                 <span className="mobile-card-label">Vehículo:</span>
                 <span className="mobile-card-value">Bus Mercedes-Benz</span>
               </div>
-              <div className="mobile-card-row">
+              <div className="mobile-card-field">
                 <span className="mobile-card-label">Conductor:</span>
                 <span className="mobile-card-value">Juan Pérez</span>
               </div>
             </div>
             <div className="mobile-card-footer">
-              <button className="btn btn-sm btn-primary btn-block">Ver Detalles</button>
+              <button className="btn btn-size-sm btn-primary btn-block">Ver Detalles</button>
             </div>
           </div>
 
           <div className="mobile-card">
-            <div className="mobile-card-header">
+            <div className="mobile-card-heading">
               <span className="mobile-card-id">#015</span>
               <span className="badge badge-warning">Mantenimiento</span>
             </div>
-            <div className="mobile-card-body">
-              <div className="mobile-card-row">
+            <div className="mobile-card-content">
+              <div className="mobile-card-field">
                 <span className="mobile-card-label">Vehículo:</span>
                 <span className="mobile-card-value">Van Toyota Hiace</span>
               </div>
-              <div className="mobile-card-row">
+              <div className="mobile-card-field">
                 <span className="mobile-card-label">Conductor:</span>
                 <span className="mobile-card-value">María García</span>
               </div>
             </div>
             <div className="mobile-card-footer">
-              <button className="btn btn-sm btn-primary btn-block">Ver Detalles</button>
+              <button className="btn btn-size-sm btn-primary btn-block">Ver Detalles</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Tabla Compacta</h3>
         <div className="table-container">
           <table className="table table-sm">

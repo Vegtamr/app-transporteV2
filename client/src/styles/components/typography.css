@@ -1,0 +1,231 @@
+/* ========================================
+   COMPONENTES - TIPOGRAFÍA
+   Estilos específicos de tipografía
+   ======================================== */
+
+/* ========================================
+   HEADINGS Y TEXTO BASE
+   ======================================== */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--secondary-color);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--space-sm);
+}
+
+h1 { font-size: var(--font-size-4xl); }
+h2 { font-size: var(--font-size-3xl); }
+h3 { font-size: var(--font-size-2xl); }
+h4 { font-size: var(--font-size-xl); }
+h5 { font-size: var(--font-size-lg); }
+h6 { font-size: var(--font-size-base); }
+
+p {
+  margin-bottom: var(--space-sm);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   ENLACES CON COLORES
+   ======================================== */
+.link-primary {
+  color: var(--primary-color);
+}
+
+.link-secondary {
+  color: var(--secondary-color);
+}
+
+.link-danger {
+  color: var(--danger-color);
+}
+
+.link-success {
+  color: var(--success-color);
+}
+
+.link-warning {
+  color: var(--warning-color);
+}
+
+.link-info {
+  color: var(--info-color);
+}
+
+/* ========================================
+   BLOCKQUOTES
+   ======================================== */
+blockquote {
+  border-left: 4px solid var(--primary-color);
+  padding-left: var(--space-md);
+  margin: var(--space-md) 0;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+blockquote cite {
+  display: block;
+  margin-top: var(--space-sm);
+  font-size: var(--font-size-sm);
+  color: var(--text-color);
+  font-style: normal;
+}
+
+/* ========================================
+   LISTAS ESTILIZADAS
+   ======================================== */
+.list-styled {
+  margin: var(--space-sm) 0;
+  padding-left: var(--space-lg);
+}
+
+.list-styled li {
+  margin-bottom: var(--space-xs);
+}
+
+.list-unstyled {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list-inline {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.list-spaced li {
+  margin-bottom: var(--space-sm);
+}
+
+/* ========================================
+   CÓDIGO Y PRE
+   ======================================== */
+pre {
+  background: var(--surface-color);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  max-width: 100%;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+code {
+  background: var(--surface-color);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9em;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* ========================================
+   CLASES DE UTILIDAD TIPOGRÁFICA
+   ======================================== */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+.text-uppercase { text-transform: uppercase; }
+.text-lowercase { text-transform: lowercase; }
+.text-capitalize { text-transform: capitalize; }
+
+.text-primary { color: var(--primary-color); }
+.text-secondary { color: var(--secondary-color); }
+.text-success { color: var(--success-color); }
+.text-danger { color: var(--danger-color); }
+.text-warning { color: var(--warning-color); }
+.text-info { color: var(--info-color); }
+.text-muted { color: var(--text-secondary); }
+.text-white { color: white; }
+.text-dark { color: var(--text-color); }
+
+.text-small { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-large { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+.text-2xl { font-size: var(--font-size-2xl); }
+.text-3xl { font-size: var(--font-size-3xl); }
+.text-4xl { font-size: var(--font-size-4xl); }
+
+.font-light { font-weight: 300; }
+.font-normal { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+
+.text-italic { font-style: italic; }
+.text-normal { font-style: normal; }
+
+.text-underline { text-decoration: underline; }
+.text-line-through { text-decoration: line-through; }
+.text-no-underline { text-decoration: none; }
+
+.line-height-none { line-height: 1; }
+.line-height-tight { line-height: 1.25; }
+.line-height-normal { line-height: 1.5; }
+.line-height-relaxed { line-height: 1.75; }
+.line-height-loose { line-height: 2; }
+
+.letter-spacing-tight { letter-spacing: -0.025em; }
+.letter-spacing-normal { letter-spacing: 0; }
+.letter-spacing-wide { letter-spacing: 0.025em; }
+.letter-spacing-wider { letter-spacing: 0.05em; }
+.letter-spacing-widest { letter-spacing: 0.1em; }
+
+/* ========================================
+   TEXTO TRUNCADO
+   ======================================== */
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-wrap { white-space: normal; }
+.text-nowrap { white-space: nowrap; }
+.text-break { word-break: break-all; }
+
+/* ========================================
+   TIPOGRAFÍA RESPONSIVA
+   ======================================== */
+@media (max-width: 768px) {
+  /* Ajustar tamaños de texto en móvil para evitar desbordamiento */
+  h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    word-wrap: break-word;
+  }
+  
+  h2 {
+    font-size: clamp(1.25rem, 3.5vw, 2rem);
+    word-wrap: break-word;
+  }
+  
+  h3 {
+    font-size: clamp(1.125rem, 3vw, 1.75rem);
+    word-wrap: break-word;
+  }
+  
+  .text-4xl { font-size: var(--font-size-3xl); }
+  .text-3xl { font-size: var(--font-size-2xl); }
+  .text-2xl { font-size: var(--font-size-xl); }
+}

@@ -6,7 +6,7 @@ function Typography() {
       <h2>Tipografía</h2>
       
       <div className="typography-examples">
-        <div className="example-group">
+        <div className="surface-padded-section">
           <h3>Encabezados</h3>
           <h1>Heading 1 - 2.5rem (40px)</h1>
           <h2>Heading 2 - 2rem (32px)</h2>
@@ -16,7 +16,7 @@ function Typography() {
           <h6>Heading 6 - 1rem (16px)</h6>
         </div>
 
-        <div className="example-group">
+        <div className="surface-padded-section">
           <h3>Texto de Párrafo</h3>
           <p>
             Este es un párrafo normal con <strong>texto en negrita</strong> y 
@@ -31,7 +31,7 @@ function Typography() {
           </p>
         </div>
 
-        <div className="example-group">
+        <div className="surface-padded-section">
           <h3>Enlaces</h3>
           <p>
             Este es un <a href="#">enlace normal</a> dentro de un párrafo.
@@ -43,7 +43,7 @@ function Typography() {
           </p>
         </div>
 
-        <div className="example-group">
+        <div className="surface-padded-section">
           <h3>Listas</h3>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
             <div>
@@ -70,7 +70,7 @@ function Typography() {
           </div>
         </div>
 
-        <div className="example-group">
+        <div className="surface-padded-section">
           <h3>Citas</h3>
           <blockquote>
             "La excelencia en el transporte no es un acto, sino un hábito."
@@ -78,7 +78,7 @@ function Typography() {
           </blockquote>
         </div>
 
-        <div className="example-group">
+        <div className="surface-padded-section">
           <h3>Código</h3>
           <p>
             Código en línea: <code>const vehiculo = 'activo';</code>

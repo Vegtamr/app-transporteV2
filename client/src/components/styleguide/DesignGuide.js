@@ -9,7 +9,7 @@ function DesignGuide() {
     <section className="section">
       <h2>Guía de Implementación</h2>
       
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Cómo Usar el Sistema de Diseño</h3>
         
         <div className="alert alert-info">
@@ -98,7 +98,7 @@ function MiComponente() {
         </pre>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Mejores Prácticas</h3>
         
         <div style={{ display: 'grid', gap: 'var(--space-md)' }}>
@@ -130,7 +130,7 @@ function MiComponente() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Accesibilidad</h3>
         
         <ul style={{ lineHeight: '1.8' }}>
@@ -143,12 +143,12 @@ function MiComponente() {
         </ul>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Performance</h3>
         
         <div className="stats-grid">
           <div className="card">
-            <div className="card-body">
+            <div className="card-content">
               <h4>Lazy Loading</h4>
               <p className="text-secondary">
                 Imágenes cargan solo cuando están cerca del viewport
@@ -157,7 +157,7 @@ function MiComponente() {
           </div>
           
           <div className="card">
-            <div className="card-body">
+            <div className="card-content">
               <h4>CSS Variables</h4>
               <p className="text-secondary">
                 Un solo lugar para cambiar todo el tema
@@ -166,7 +166,7 @@ function MiComponente() {
           </div>
           
           <div className="card">
-            <div className="card-body">
+            <div className="card-content">
               <h4>Clamp() Functions</h4>
               <p className="text-secondary">
                 Sin media queries, escalado fluido nativo
@@ -175,7 +175,7 @@ function MiComponente() {
           </div>
           
           <div className="card">
-            <div className="card-body">
+            <div className="card-content">
               <h4>Skeleton Loaders</h4>
               <p className="text-secondary">
                 Estados de carga que mejoran la percepción

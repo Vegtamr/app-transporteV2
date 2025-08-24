@@ -1,0 +1,386 @@
+/* ========================================
+   RESET Y ESTILOS BASE
+   Normalización y estilos fundamentales
+   ======================================== */
+
+/* ========================================
+   RESET UNIVERSAL
+   ======================================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========================================
+   DOCUMENTO BASE
+   ======================================== */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ========================================
+   TIPOGRAFÍA BASE
+   ======================================== */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--secondary-color);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--space-sm);
+}
+
+h1 { font-size: var(--font-size-4xl); }
+h2 { font-size: var(--font-size-3xl); }
+h3 { font-size: var(--font-size-2xl); }
+h4 { font-size: var(--font-size-xl); }
+h5 { font-size: var(--font-size-lg); }
+h6 { font-size: var(--font-size-base); }
+
+p {
+  margin-bottom: var(--space-sm);
+}
+
+/* ========================================
+   ENLACES BASE
+   ======================================== */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition-base);
+  background-color: transparent;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   LISTAS BASE
+   ======================================== */
+ul, ol {
+  list-style-position: inside;
+  margin-bottom: var(--space-sm);
+  padding-left: var(--space-md);
+}
+
+li {
+  margin-bottom: var(--space-xs);
+}
+
+/* Reset para listas de navegación */
+nav ul,
+nav ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ========================================
+   ELEMENTOS DE FORMULARIO BASE
+   ======================================== */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: inherit;
+  margin: 0;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  appearance: button;
+  cursor: pointer;
+}
+
+button:disabled,
+[type="button"]:disabled,
+[type="reset"]:disabled,
+[type="submit"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-size-lg);
+  line-height: inherit;
+  color: inherit;
+  white-space: normal;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+/* ========================================
+   ELEMENTOS MULTIMEDIA
+   ======================================== */
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  border-style: none;
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+/* ========================================
+   TABLAS BASE
+   ======================================== */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+caption {
+  padding-top: var(--space-sm);
+  padding-bottom: var(--space-sm);
+  color: var(--text-secondary);
+  text-align: left;
+  caption-side: bottom;
+}
+
+th {
+  text-align: inherit;
+  font-weight: var(--font-weight-bold);
+}
+
+/* ========================================
+   ELEMENTOS INTERACTIVOS
+   ======================================== */
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+  cursor: pointer;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ========================================
+   CÓDIGO Y PREFORMATEADO
+   ======================================== */
+pre,
+code,
+kbd,
+samp {
+  font-family: var(--font-family-mono);
+  font-size: 0.875em;
+}
+
+pre {
+  margin-top: 0;
+  margin-bottom: var(--space-sm);
+  overflow: auto;
+  -ms-overflow-style: scrollbar;
+}
+
+code {
+  padding: 0.125rem 0.25rem;
+  background-color: var(--surface-color);
+  border-radius: var(--radius-sm);
+}
+
+pre code {
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+kbd {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.875em;
+  color: var(--background-color);
+  background-color: var(--secondary-color);
+  border-radius: var(--radius-sm);
+}
+
+/* ========================================
+   ELEMENTOS SEMÁNTICOS HTML5
+   ======================================== */
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+figure {
+  margin: 0 0 var(--space-sm);
+}
+
+figcaption {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+/* ========================================
+   HR (LÍNEA HORIZONTAL)
+   ======================================== */
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+  margin: var(--space-lg) 0;
+  border: 0;
+  border-top: var(--border-width) solid var(--border-color);
+}
+
+/* ========================================
+   ELEMENTOS DE CITA
+   ======================================== */
+blockquote {
+  margin: 0 0 var(--space-sm);
+  padding-left: var(--space-md);
+  border-left: 4px solid var(--primary-color);
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+blockquote cite {
+  display: block;
+  margin-top: var(--space-sm);
+  font-size: var(--font-size-sm);
+  font-style: normal;
+  color: var(--text-color);
+}
+
+/* ========================================
+   ABREVIACIONES
+   ======================================== */
+abbr[title] {
+  text-decoration: underline dotted;
+  cursor: help;
+  text-decoration-skip-ink: none;
+}
+
+/* ========================================
+   TEXTO EN NEGRITA Y ÉNFASIS
+   ======================================== */
+b,
+strong {
+  font-weight: var(--font-weight-bold);
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+/* ========================================
+   TEXTO PEQUEÑO
+   ======================================== */
+small {
+  font-size: var(--font-size-sm);
+}
+
+/* ========================================
+   SUBÍNDICE Y SUPERÍNDICE
+   ======================================== */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* ========================================
+   SELECCIÓN DE TEXTO
+   ======================================== */
+::selection {
+  background-color: rgba(250, 179, 27, 0.2);
+  color: var(--text-color);
+}
+
+::-moz-selection {
+  background-color: rgba(250, 179, 27, 0.2);
+  color: var(--text-color);
+}

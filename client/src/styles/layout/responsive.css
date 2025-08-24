@@ -1,0 +1,342 @@
+/* ========================================
+   LAYOUT - RESPONSIVE
+   Media queries y comportamiento responsivo
+   ======================================== */
+
+/* ========================================
+   BREAKPOINTS Y VARIABLES
+   Los breakpoints están definidos en variables.css:
+   --breakpoint-xs: 0
+   --breakpoint-sm: 576px
+   --breakpoint-md: 768px
+   --breakpoint-lg: 992px
+   --breakpoint-xl: 1200px
+   --breakpoint-xxl: 1400px
+   ======================================== */
+
+/* ========================================
+   UTILIDADES DE VISIBILIDAD RESPONSIVA
+   ======================================== */
+.show-mobile { display: none; }
+.hide-mobile { display: block; }
+
+.show-tablet { display: none; }
+.hide-tablet { display: block; }
+
+.show-desktop { display: block; }
+.hide-desktop { display: none; }
+
+/* ========================================
+   MÓVILES PEQUEÑOS (< 576px)
+   ======================================== */
+@media (max-width: 575px) {
+  .show-mobile { display: block; }
+  .hide-mobile { display: none; }
+  
+  /* Botones en móvil */
+  .btn {
+    width: 100%;
+    display: block;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+  }
+  
+  .btn-group .btn {
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-xs);
+  }
+  
+  .btn-group .btn:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Ajustes de espaciado */
+  .container {
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+  }
+}
+
+/* ========================================
+   MÓVILES MEDIANOS (576px - 767px)
+   ======================================== */
+@media (min-width: 576px) and (max-width: 767px) {
+  /* Grids adaptativos */
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ========================================
+   TABLETS (768px - 991px)
+   ======================================== */
+@media (min-width: 768px) and (max-width: 991px) {
+  .show-tablet { display: block; }
+  .hide-tablet { display: none; }
+  
+  /* Grids adaptativos */
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Navbar ajustes para tablet */
+  .navbar-link {
+    height: 40px;
+    font-size: 0.95rem;
+  }
+  
+  /* Cards más pequeñas en tablet */
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ========================================
+   LAPTOPS (992px - 1199px)
+   ======================================== */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hide-desktop { display: none; }
+  
+  /* Navbar ajustes para laptop */
+  .navbar-link {
+    height: 45px;
+    font-size: 1rem;
+  }
+}
+
+/* ========================================
+   DESKTOP (≥ 1200px)
+   ======================================== */
+@media (min-width: 1200px) {
+  .hide-desktop { display: none; }
+  
+  /* Navbar ajustes para desktop */
+  .navbar-link {
+    height: 50px;
+    font-size: 1.1rem;
+  }
+  
+  /* Máximo ancho para contenido muy ancho */
+  .max-width-desktop {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+/* ========================================
+   ORIENTACIÓN
+   ======================================== */
+@media (orientation: landscape) and (max-height: 500px) {
+  /* Ajustes para móviles en landscape */
+  .navbar-container {
+    min-height: 60px;
+  }
+  
+  .navbar-logo {
+    height: 30px;
+    max-height: 30px;
+  }
+}
+
+/* ========================================
+   RESOLUCIÓN Y DENSIDAD
+   ======================================== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Ajustes para pantallas de alta densidad */
+  .navbar-logo,
+  .sidebar-logo {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* ========================================
+   PREFERENCIAS DE USUARIO
+   ======================================== */
+
+/* Movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Esquema de colores oscuro */
+@media (prefers-color-scheme: dark) {
+  /* Preparación para modo oscuro futuro */
+  :root {
+    --background-color-dark: #1a1a1a;
+    --surface-color-dark: #2d2d2d;
+    --text-color-dark: #ffffff;
+    --border-color-dark: #404040;
+  }
+}
+
+/* Contraste alto */
+@media (prefers-contrast: high) {
+  :root {
+    --border-color: #000000;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.3);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.4);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.5);
+  }
+  
+  .btn {
+    border: 2px solid currentColor;
+  }
+  
+  .form-control,
+  .form-select,
+  .form-textarea {
+    border-width: 3px;
+  }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  
+  .no-print,
+  .hamburger,
+  .navbar-actions,
+  .btn,
+  .sidebar {
+    display: none !important;
+  }
+  
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    page-break-inside: avoid;
+  }
+  
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+  
+  .table {
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    border: 1px solid #ddd;
+  }
+}
+
+/* ========================================
+   RANGOS DE DISPOSITIVOS ESPECÍFICOS
+   ======================================== */
+
+/* iPhone SE y similares */
+@media (max-width: 375px) and (max-height: 667px) {
+  .form-card {
+    padding: var(--space-md);
+  }
+  
+  .btn {
+    min-height: 40px;
+  }
+}
+
+/* iPad y tablets similares */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .sidebar-demo {
+    grid-template-columns: 200px 1fr;
+  }
+  
+  .navbar-menu {
+    gap: var(--space-md);
+  }
+}
+
+/* Pantallas muy grandes */
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1500px;
+  }
+  
+  .main-content {
+    max-width: 1600px;
+  }
+}
+
+/* ========================================
+   HOVER Y INTERACCIÓN
+   ======================================== */
+@media (hover: hover) {
+  /* Efectos hover solo en dispositivos que los soportan */
+  .card:hover {
+    transform: translateY(-2px);
+  }
+  
+  .btn:hover {
+    transform: translateY(-1px);
+  }
+}
+
+@media (hover: none) {
+  /* Dispositivos táctiles - remover efectos hover */
+  .card:hover {
+    transform: none;
+  }
+  
+  .btn:hover {
+    transform: none;
+  }
+  
+  /* Mejor UX para touch */
+  .btn {
+    min-height: 48px;
+  }
+  
+  .form-control,
+  .form-select {
+    min-height: 48px;
+  }
+}
+
+/* ========================================
+   BANDAS DE CONEXIÓN
+   ======================================== */
+@media (prefers-reduced-data: reduce) {
+  /* Para conexiones lentas */
+  .skeleton {
+    animation: none;
+  }
+  
+  .progress-bar-animated {
+    animation: none;
+  }
+  
+  /* Reducir sombras costosas */
+  .shadow-lg,
+  .shadow-xl {
+    box-shadow: var(--shadow-sm);
+  }
+}

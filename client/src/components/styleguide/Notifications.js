@@ -17,7 +17,7 @@ function Notifications() {
     <section className="section">
       <h2>Notificaciones</h2>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Alertas Minimalistas</h3>
         
         <div className="alert alert-success">
@@ -53,7 +53,7 @@ function Notifications() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Skeleton Loaders</h3>
         <p style={{ marginBottom: '1rem' }}>Estados de carga minimalistas:</p>
         
@@ -67,7 +67,7 @@ function Notifications() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Alertas con Acciones</h3>
         
         <div className="notification notification-info">
@@ -76,8 +76,8 @@ function Notifications() {
             <strong>Nueva Notificación</strong>
             <p>Tienes 3 nuevas asignaciones de ruta pendientes de revisión.</p>
             <div className="notification-actions">
-              <button className="btn btn-sm btn-primary">Ver Ahora</button>
-              <button className="btn btn-sm btn-outline-secondary">Más Tarde</button>
+              <button className="btn btn-size-sm btn-primary">Ver Ahora</button>
+              <button className="btn btn-size-sm btn-outline-secondary">Más Tarde</button>
             </div>
           </div>
           <button className="close-btn">×</button>
@@ -89,14 +89,14 @@ function Notifications() {
             <strong>Combustible Bajo</strong>
             <p>El Bus #001 tiene menos del 20% de combustible.</p>
             <div className="notification-actions">
-              <button className="btn btn-sm btn-warning">Programar Reabastecimiento</button>
+              <button className="btn btn-size-sm btn-warning">Programar Reabastecimiento</button>
             </div>
           </div>
           <button className="close-btn">×</button>
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Toast Notifications (Click para mostrar)</h3>
         <div className="button-group">
           <button 
@@ -145,7 +145,7 @@ function Notifications() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Badges y Etiquetas</h3>
         
         <div style={{ marginBottom: '1rem' }}>
@@ -189,7 +189,7 @@ function Notifications() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Progress Bars</h3>
         
         <div style={{ marginBottom: '1.5rem' }}>

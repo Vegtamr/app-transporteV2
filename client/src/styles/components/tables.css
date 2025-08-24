@@ -1,0 +1,134 @@
+/* ========================================
+   COMPONENTES - TABLAS
+   Estilos para tablas y grids de datos
+   ======================================== */
+
+/* Contenedor de tabla */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-md);
+}
+
+/* Tabla básica */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--background-color);
+}
+
+.table thead {
+  background: var(--secondary-color);
+}
+
+.table th {
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.table td {
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+.table tbody tr {
+  transition: var(--transition-base);
+}
+
+.table tbody tr:hover {
+  background-color: rgba(250, 179, 27, 0.05);
+}
+
+/* Tabla responsiva con scroll */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 -1rem;
+  padding: 0 1rem;
+}
+
+.table-responsive::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: var(--surface-color);
+  border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Tablas responsivas: desktop vs mobile */
+.table-desktop {
+  display: block;
+}
+
+.table-mobile {
+  display: none;
+}
+
+.table-responsive-cards {
+  display: none;
+}
+
+/* Media query para tablas responsivas */
+@media (max-width: 768px) {
+  .table-desktop {
+    display: none;
+  }
+  
+  .table-mobile {
+    display: block;
+  }
+  
+  .table {
+    font-size: var(--font-size-sm);
+  }
+  
+  .table th,
+  .table td {
+    padding: var(--space-xs) var(--space-sm);
+  }
+  
+  .table-responsive {
+    margin: 0 -0.5rem;
+    padding: 0 0.5rem;
+  }
+}
+
+/* Móviles pequeños - mostrar cards en lugar de tabla */
+@media (max-width: 575px) {
+  .table-responsive {
+    display: none;
+  }
+  
+  .table-responsive-cards {
+    display: block;
+  }
+}
+
+/* Móviles medianos - tabla con scroll horizontal en tablets pequeñas */
+@media (min-width: 576px) and (max-width: 767px) {
+  .table-responsive {
+    display: block;
+  }
+  
+  .table-responsive-cards {
+    display: none;
+  }
+}

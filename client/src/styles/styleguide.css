@@ -1,0 +1,365 @@
+/* ========================================
+   SISTEMA DE DISEÑO - APP TRANSPORTE
+   Archivo principal con imports modulares
+   
+   Estructura:
+   1. Base - Variables, reset y utilidades
+   2. Layout - Contenedores y responsividad
+   3. Components - Componentes individuales
+   ======================================== */
+
+/* ========================================
+   1. BASE
+   Fundación del sistema de diseño
+   ======================================== */
+@import './base/variables.css';    /* Variables CSS del sistema */
+@import './base/reset.css';        /* Reset y estilos base HTML */
+@import './base/utilities.css';    /* Clases de utilidad */
+
+/* ========================================
+   2. LAYOUT
+   Estructura y responsividad
+   ======================================== */
+@import './layout/containers.css';  /* Contenedores y layouts */
+@import './layout/responsive.css';  /* Media queries y breakpoints */
+
+/* ========================================
+   3. COMPONENTES
+   Componentes individuales del sistema
+   ======================================== */
+@import './components/typography.css';    /* Tipografía y texto */
+@import './components/buttons.css';       /* Botones y grupos */
+@import './components/forms.css';         /* Formularios e inputs */
+@import './components/cards.css';         /* Tarjetas y paneles */
+@import './components/tables.css';        /* Tablas y grids de datos */
+@import './components/navigation.css';    /* Navbar, sidebar, tabs */
+@import './components/notifications.css'; /* Alerts, toasts, badges */
+@import './components/datepickers.css';   /* Date y time pickers */
+
+/* ========================================
+   ESTILOS ESPECÍFICOS DEL STYLEGUIDE
+   Solo para la página de demostración
+   ======================================== */
+
+/* Layout principal de la aplicación */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: var(--space-lg);
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Contenedor del Styleguide */
+.styleguide-container {
+  padding: var(--space-lg);
+}
+
+.styleguide-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 2px solid var(--border-color);
+  background: var(--gradient-subtle);
+}
+
+.styleguide-header h1 {
+  color: var(--primary-color);
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--space-sm);
+}
+
+.styleguide-header p {
+  color: var(--text-secondary);
+  font-size: var(--font-size-lg);
+}
+
+.styleguide-content {
+  margin-top: var(--space-xl);
+}
+
+/* Tabs del Styleguide */
+.tabs {
+  display: flex;
+  gap: var(--space-xs);
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: var(--space-sm) var(--space-md);
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: var(--font-size-base);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.tab:hover {
+  color: var(--primary-color);
+}
+
+.tab.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+.tab i {
+  font-size: 1.2em;
+}
+
+/* Secciones del Styleguide */
+.section {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section h2 {
+  color: var(--secondary-color);
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.section h3 {
+  color: var(--secondary-color);
+  font-size: var(--font-size-xl);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-md);
+}
+
+/* Paleta de colores */
+.color-group {
+  margin-bottom: var(--space-xl);
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.color-item {
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.color-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.color-sample {
+  height: 100px;
+  width: 100%;
+}
+
+.color-info {
+  padding: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.color-name {
+  font-weight: var(--font-weight-semibold);
+  color: var(--secondary-color);
+}
+
+.color-code {
+  font-family: var(--font-family-mono);
+  color: var(--text-color);
+  font-size: var(--font-size-sm);
+}
+
+.color-var {
+  font-family: var(--font-family-mono);
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+}
+
+/* Grupos de botones para demos */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  align-items: center;
+  margin-top: var(--space-md);
+}
+
+/* Formularios de ejemplo */
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+
+/* Grid de Cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-md);
+}
+
+/* Grid de estadísticas */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.stat-card .card-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.stat-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+}
+
+.stat-icon.bg-primary {
+  background: var(--primary-color);
+}
+
+.stat-icon.bg-success {
+  background: var(--success-color);
+}
+
+.stat-icon.bg-warning {
+  background: var(--warning-color);
+}
+
+.stat-icon.bg-info {
+  background: var(--info-color);
+}
+
+.stat-details h3 {
+  margin: 0;
+  font-size: var(--font-size-2xl);
+  color: var(--secondary-color);
+}
+
+.stat-details p {
+  margin: 4px 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.stat-trend-indicator {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.stat-trend-indicator.positive {
+  color: var(--success-color);
+}
+
+.stat-trend-indicator.negative {
+  color: var(--danger-color);
+}
+
+.stat-trend-indicator.neutral {
+  color: var(--text-secondary);
+}
+
+/* Cards de vehículos */
+.vehicle-icon {
+  text-align: center;
+  margin: var(--space-md) 0;
+}
+
+.card-stats {
+  display: flex;
+  justify-content: space-around;
+  padding: var(--space-sm);
+  background: var(--surface-color);
+  border-radius: var(--radius-sm);
+  margin-top: var(--space-md);
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-label {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.stat-value {
+  display: block;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--secondary-color);
+}
+
+/* Responsivo para el Styleguide */
+@media (max-width: 768px) {
+  .main-content {
+    padding: var(--space-md);
+  }
+  
+  .styleguide-container {
+    padding: var(--space-md);
+  }
+  
+  .tabs {
+    overflow-x: auto;
+  }
+  
+  .tab span {
+    display: none;
+  }
+  
+  .color-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

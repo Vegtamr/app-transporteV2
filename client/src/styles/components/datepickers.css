@@ -1,0 +1,208 @@
+/* ========================================
+   COMPONENTES - DATE TIME PICKERS
+   Estilos para selectores de fecha y hora
+   ======================================== */
+
+/* ========================================
+   WRAPPER PARA CALENDARIO INLINE
+   ======================================== */
+.datepicker-inline-wrapper {
+  display: inline-block;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-sm);
+  background: var(--surface-color);
+}
+
+/* ========================================
+   INPUT CON ICONO PARA DATEPICKER
+   ======================================== */
+.input-with-icon .form-control.with-icon {
+  padding-left: 40px;
+}
+
+.datepicker-input-wrapper {
+  position: relative;
+}
+
+.datepicker-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-color);
+  pointer-events: none;
+}
+
+/* ========================================
+   ESTILOS PARA REACT-DATEPICKER
+   Los estilos de React DatePicker usan los estilos por defecto de la librería
+   Aquí solo agregamos personalizaciones específicas
+   ======================================== */
+
+/* Personalización del portal del datepicker */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__input-container {
+  width: 100%;
+}
+
+.react-datepicker {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  font-family: var(--font-family);
+}
+
+.react-datepicker__header {
+  background: var(--surface-color);
+  border-bottom: 1px solid var(--border-color);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.react-datepicker__current-month {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.react-datepicker__day-name {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.react-datepicker__day--selected {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.react-datepicker__day--keyboard-selected {
+  background-color: rgba(250, 179, 27, 0.2);
+  color: var(--text-color);
+}
+
+.react-datepicker__day:hover {
+  background-color: rgba(250, 179, 27, 0.1);
+}
+
+.react-datepicker__day--today {
+  background-color: var(--info-color);
+  color: white;
+}
+
+.react-datepicker__day--disabled {
+  color: var(--text-secondary);
+  cursor: not-allowed;
+}
+
+.react-datepicker__navigation {
+  background: var(--primary-color);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.react-datepicker__navigation:hover {
+  background: rgba(250, 179, 27, 0.8);
+}
+
+/* ========================================
+   TIME PICKER PERSONALIZADO
+   ======================================== */
+.time-picker-wrapper {
+  position: relative;
+}
+
+.time-input {
+  width: 100%;
+  padding: var(--space-sm);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family);
+  transition: var(--transition-base);
+  min-height: 44px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.time-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(250, 179, 27, 0.1);
+}
+
+.time-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.time-option {
+  padding: var(--space-sm);
+  cursor: pointer;
+  transition: background 0.2s ease;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.time-option:last-child {
+  border-bottom: none;
+}
+
+.time-option:hover {
+  background: var(--background-color);
+}
+
+.time-option.selected {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+/* ========================================
+   DATETIME COMBINED PICKER
+   ======================================== */
+.datetime-picker {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-sm);
+  align-items: end;
+}
+
+.datetime-separator {
+  padding: 0 var(--space-xs);
+  color: var(--text-secondary);
+  font-weight: 500;
+  align-self: center;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 576px) {
+  .datetime-picker {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  .datetime-separator {
+    display: none;
+  }
+  
+  .react-datepicker {
+    font-size: var(--font-size-sm);
+  }
+  
+  .time-dropdown {
+    max-height: 150px;
+  }
+}

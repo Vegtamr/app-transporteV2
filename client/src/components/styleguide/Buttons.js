@@ -14,12 +14,12 @@ function Buttons() {
     <section className="section">
       <h2>Botones</h2>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Botones Primarios</h3>
         <div className="button-group">
           <button className="btn btn-primary">Primario</button>
-          <button className="btn btn-primary btn-lg">Grande</button>
-          <button className="btn btn-primary btn-sm">Pequeño</button>
+          <button className="btn btn-primary btn-size-lg">Grande</button>
+          <button className="btn btn-primary btn-size-sm">Pequeño</button>
           <button className="btn btn-primary" disabled>Deshabilitado</button>
           <button 
             className={`btn btn-primary ${loading.primary ? 'loading' : ''}`}
@@ -31,17 +31,17 @@ function Buttons() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Botones Secundarios</h3>
         <div className="button-group">
           <button className="btn btn-secondary">Secundario</button>
-          <button className="btn btn-secondary btn-lg">Grande</button>
-          <button className="btn btn-secondary btn-sm">Pequeño</button>
+          <button className="btn btn-secondary btn-size-lg">Grande</button>
+          <button className="btn btn-secondary btn-size-sm">Pequeño</button>
           <button className="btn btn-secondary" disabled>Deshabilitado</button>
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Botones de Estado</h3>
         <div className="button-group">
           <button className="btn btn-success">
@@ -59,7 +59,7 @@ function Buttons() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Botones Outline</h3>
         <div className="button-group">
           <button className="btn btn-outline-primary">Primario</button>
@@ -69,25 +69,25 @@ function Buttons() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Botones de Icono</h3>
         <div className="button-group">
-          <button className="btn btn-icon btn-primary">
+          <button className="btn btn-icon-only btn-primary">
             <i className="fas fa-plus"></i>
           </button>
-          <button className="btn btn-icon btn-secondary">
+          <button className="btn btn-icon-only btn-secondary">
             <i className="fas fa-edit"></i>
           </button>
-          <button className="btn btn-icon btn-danger">
+          <button className="btn btn-icon-only btn-danger">
             <i className="fas fa-trash"></i>
           </button>
-          <button className="btn btn-icon btn-success">
+          <button className="btn btn-icon-only btn-success">
             <i className="fas fa-download"></i>
           </button>
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Grupos de Botones</h3>
         <div className="btn-group">
           <button className="btn btn-primary">Izquierda</button>
@@ -96,7 +96,7 @@ function Buttons() {
         </div>
       </div>
 
-      <div className="example-group">
+      <div className="surface-padded-section">
         <h3>Botones de Ancho Completo</h3>
         <button className="btn btn-primary btn-block">Botón de Ancho Completo</button>
         <button className="btn btn-secondary btn-block" style={{ marginTop: '1rem' }}>

@@ -1,0 +1,378 @@
+/* ========================================
+   COMPONENTES - FORMULARIOS
+   Estilos para formularios e inputs
+   ======================================== */
+
+/* Contenedores de formularios */
+.form-flex-centered {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-lg) var(--space-md);
+}
+
+.form-card {
+  width: 100%;
+  max-width: 520px;
+  background: var(--surface-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--border-color);
+}
+
+.form-width-constrained {
+  max-width: 500px;
+}
+
+.form-group {
+  margin-bottom: var(--space-md);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--space-xs);
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+}
+
+/* Elementos de entrada */
+.form-control,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: var(--space-sm);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family);
+  transition: var(--transition-base);
+  min-height: 44px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(250, 179, 27, 0.1);
+}
+
+/* Tamaños de form-control */
+.form-control-sm {
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--font-size-sm);
+  min-height: 36px;
+}
+
+.form-control-lg {
+  padding: var(--space-md) var(--space-lg);
+  font-size: var(--font-size-lg);
+  min-height: 52px;
+}
+
+/* Estados */
+.form-control:disabled {
+  background-color: var(--surface-color);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Input Groups */
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+}
+
+.input-group .form-control {
+  padding-right: 50px;
+}
+
+/* Botón de alternar contraseña */
+.password-toggle {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  bottom: 1px;
+  width: 48px;
+  background: linear-gradient(135deg, var(--background-color) 0%, rgba(250, 250, 250, 0.5) 100%);
+  border: none;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0 calc(var(--radius-md) - 1px) calc(var(--radius-md) - 1px) 0;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1.1rem;
+}
+
+.password-toggle:hover {
+  background: var(--primary-color);
+  color: var(--text-color);
+  border-left-color: transparent;
+}
+
+.password-toggle:active {
+  transform: scale(0.95);
+}
+
+.password-toggle i {
+  pointer-events: none;
+  transition: transform 0.2s ease;
+}
+
+.password-toggle:hover i {
+  transform: rotate(15deg) scale(1.1);
+}
+
+.password-toggle.active {
+  background: var(--primary-color);
+  color: var(--text-color);
+  border-left-color: transparent;
+}
+
+.password-toggle.active i {
+  animation: pulse 0.3s ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Input con iconos */
+.position-relative-container {
+  position: relative;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon .form-control {
+  padding-right: 40px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.input-with-icon .form-control:focus {
+  text-overflow: clip;
+  white-space: normal;
+  overflow: visible;
+}
+
+.input-with-icon .form-control.with-icon {
+  padding-left: 40px;
+}
+
+.input-icon-right {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-color);
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent 0%, var(--surface-color) 20%);
+  padding-left: 10px;
+}
+
+/* Botón de limpiar input */
+.input-action-button {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.input-action-button:hover {
+  background: var(--background-color);
+  color: var(--danger-color);
+  border-color: var(--danger-color);
+}
+
+/* Overlay de desvanecimiento para texto largo */
+.text-overflow-gradient {
+  position: absolute;
+  right: 40px;
+  top: 1px;
+  bottom: 1px;
+  width: 60px;
+  background: linear-gradient(90deg, transparent 0%, var(--surface-color) 50%);
+  pointer-events: none;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.input-with-icon:focus-within .text-overflow-gradient {
+  opacity: 0;
+}
+
+/* Dropdown para autocomplete */
+.autocomplete-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-height: 280px;
+  overflow-y: auto;
+  z-index: 1000;
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover {
+  background: var(--background-color);
+}
+
+.dropdown-item-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--primary-color);
+  color: var(--text-color);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.dropdown-item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.dropdown-item-title {
+  font-weight: 500;
+  color: var(--text-color);
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdown-item-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Estados del dropdown */
+.state-loading-centered,
+.state-empty-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: var(--text-secondary);
+  gap: 8px;
+}
+
+.state-loading-centered i,
+.state-empty-centered i {
+  font-size: 1.2rem;
+}
+
+/* Checkboxes y radios */
+.form-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+}
+
+.form-check-input {
+  width: 20px;
+  height: 20px;
+  margin-right: var(--space-sm);
+  cursor: pointer;
+}
+
+.form-check-label {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Grid de formulario */
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+
+/* Texto de éxito */
+.text-success {
+  color: var(--success-color);
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+  .form-flex-centered {
+    padding: var(--space-md) var(--space-sm);
+  }
+  
+  .form-card {
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+  }
+  
+  /* Ajuste responsivo para móviles - solo ajusta altura y scroll */
+  .autocomplete-dropdown {
+    max-height: 200px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .dropdown-item {
+    padding: 10px;
+  }
+  
+  .dropdown-item-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+  }
+}

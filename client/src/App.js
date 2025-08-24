@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Styleguide from './pages/Styleguide';
-import './styleguide.css';
+import './styles/styleguide.css';
 
 function Home() {
   return (
