@@ -346,11 +346,32 @@
   user-select: none;
 }
 
-/* Grid de formulario */
+/* Grid de formulario - Sistema de 12 columnas */
 .form-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--space-md);
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+/* Padding para columnas */
+.form-row > * {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/* Columnas para pantallas medianas y grandes (>= 768px) */
+.col-md-12 { flex: 0 0 100%; }
+.col-md-6 { flex: 0 0 50%; }
+.col-md-4 { flex: 0 0 33.333333%; }
+.col-md-3 { flex: 0 0 25%; }
+
+/* En móviles (<768px), todas las columnas son 100% */
+@media (max-width: 767px) {
+  [class*="col-md-"] {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 
 /* Texto de éxito */

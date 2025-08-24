@@ -3,4 +3,11 @@
    Estilos para selectores de fecha y hora
    ======================================== */
 
-/* Archivo CSS vacío temporalmente para debugging */
+/* React DatePicker - Hacer que el wrapper ocupe todo el ancho */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__input-container {
+  width: 100%;
+}

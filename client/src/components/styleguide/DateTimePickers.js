@@ -17,34 +17,36 @@ function DateTimePickers() {
         <div className="card-content">
           <h4>Selectores Básicos</h4>
           
-          <div style={{ marginBottom: '20px' }}>
-            <label>Fecha básica</label>
-            <DatePicker
-              selected={selectedDate}
-              onChange={(date) => setSelectedDate(date)}
-              placeholderText="Seleccionar fecha"
-              dateFormat="dd/MM/yyyy"
-              className="form-control"
-            />
+          <div className="form-row">
+            <div className="form-group col-md-6">
+              <label className="form-label">Fecha básica</label>
+              <DatePicker
+                selected={selectedDate}
+                onChange={(date) => setSelectedDate(date)}
+                placeholderText="Seleccionar fecha"
+                dateFormat="dd/MM/yyyy"
+                className="form-control"
+              />
+            </div>
+
+            <div className="form-group col-md-6">
+              <label className="form-label">Solo hora</label>
+              <DatePicker
+                selected={selectedTime}
+                onChange={(date) => setSelectedTime(date)}
+                showTimeSelect
+                showTimeSelectOnly
+                timeIntervals={15}
+                timeCaption="Hora"
+                dateFormat="HH:mm"
+                placeholderText="Seleccionar hora"
+                className="form-control"
+              />
+            </div>
           </div>
 
-          <div style={{ marginBottom: '20px' }}>
-            <label>Solo hora</label>
-            <DatePicker
-              selected={selectedTime}
-              onChange={(date) => setSelectedTime(date)}
-              showTimeSelect
-              showTimeSelectOnly
-              timeIntervals={15}
-              timeCaption="Hora"
-              dateFormat="HH:mm"
-              placeholderText="Seleccionar hora"
-              className="form-control"
-            />
-          </div>
-
-          <div style={{ marginBottom: '20px' }}>
-            <label>Fecha y hora</label>
+          <div className="form-group">
+            <label className="form-label">Fecha y hora</label>
             <DatePicker
               selected={selectedDateTime}
               onChange={(date) => setSelectedDateTime(date)}
@@ -55,8 +57,8 @@ function DateTimePickers() {
             />
           </div>
 
-          <div style={{ marginBottom: '20px' }}>
-            <label>Rango de fechas</label>
+          <div className="form-group">
+            <label className="form-label">Rango de fechas</label>
             <DatePicker
               selectsRange={true}
               startDate={startDate}
