@@ -4,3 +4,4 @@
 - implementar styleguide selector de hora y fecha
 - implementar styleguide para dropdown en campos input
 - las alertas toast deben salir desde la parte superior
+- cuando solicite iniciar el servidor debes iniciar, el servidor react, el backend y además abrir un tunnel cloudflare con npx
