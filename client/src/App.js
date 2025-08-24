@@ -5,7 +5,7 @@ import './styles/styleguide.css';
 
 function Home() {
   return (
-    <div style={{ padding: '2rem', textAlign: 'center' }}>
+    <div className="padding-lg text-center">
       <h1>App Transporte</h1>
       <p>Sistema de Gestión de Transporte</p>
       <Link to="/styleguide" className="btn btn-primary">

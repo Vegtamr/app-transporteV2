@@ -117,37 +117,34 @@ function Navigation() {
             </div>
           </nav>
         </div>
-        <p style={{ marginTop: '1rem', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
+        <p className="margin-top-md text-small-secondary">
           <i className="fas fa-info-circle"></i> Redimensiona la ventana para ver el comportamiento responsivo
         </p>
       </div>
 
       <div className="surface-padded-section">
         <h3>Alternativas de Dropdown para Navbar Principal</h3>
-        <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', padding: '1rem', background: 'var(--primary-color)' }}>
+        <div className="flex-row-gap-2 bg-primary-padded">
           
           {/* Opción 1: Solo chevron sutil */}
-          <button className="navbar-link" style={{ color: 'var(--secondary-color)' }}>
+          <button className="navbar-link color-secondary">
             Opción 1
-            <i className="fas fa-chevron-down" style={{ marginLeft: '4px', fontSize: '0.7rem', opacity: 0.5 }}></i>
+            <i className="fas fa-chevron-down margin-left-4 icon-extra-tiny opacity-50"></i>
           </button>
 
           {/* Opción 2: Con punto indicador */}
-          <button className="navbar-link" style={{ color: 'var(--secondary-color)' }}>
+          <button className="navbar-link color-secondary">
             Opción 2
-            <span style={{ 
+            <span className="margin-left-6 opacity-50" style={{ 
               width: '4px', 
               height: '4px', 
               background: 'currentColor', 
-              borderRadius: '50%', 
-              marginLeft: '6px',
-              opacity: 0.5
+              borderRadius: '50%'
             }}></span>
           </button>
 
           {/* Opción 3: Con subrayado parcial */}
-          <button className="navbar-link" style={{ 
-            color: 'var(--secondary-color)',
+          <button className="navbar-link color-secondary" style={{ 
             borderBottom: '2px dashed rgba(43, 43, 43, 0.3)',
             borderRadius: 0,
             paddingBottom: '6px'
@@ -156,27 +153,26 @@ function Navigation() {
           </button>
 
           {/* Opción 4: Sin indicador (minimalista) */}
-          <button className="navbar-link" style={{ 
-            color: 'var(--secondary-color)',
+          <button className="navbar-link color-secondary" style={{ 
             fontWeight: '600'
           }}>
             Opción 4
           </button>
 
           {/* Opción 5: Con icono más */}
-          <button className="navbar-link" style={{ color: 'var(--secondary-color)' }}>
+          <button className="navbar-link color-secondary">
             Opción 5
-            <i className="fas fa-plus" style={{ marginLeft: '6px', fontSize: '0.6rem', opacity: 0.4 }}></i>
+            <i className="fas fa-plus margin-left-6 icon-tiny opacity-40"></i>
           </button>
         </div>
       </div>
 
       <div className="surface-padded-section">
         <h3>Alternativas de Indicadores Dropdown (Menú Móvil)</h3>
-        <div style={{ display: 'grid', gap: '1rem' }}>
+        <div className="grid-gap-1">
           
           {/* Opción 1: Con badge contador */}
-          <button className="navbar-mobile-link" style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '8px' }}>
+          <button className="navbar-mobile-link white-card-bordered">
             <i className="fas fa-folder"></i>
             <span>Opción con Badge</span>
             <span className="dropdown-indicator">
@@ -186,32 +182,32 @@ function Navigation() {
           </button>
 
           {/* Opción 2: Con plus/minus */}
-          <button className="navbar-mobile-link" style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '8px' }}>
+          <button className="navbar-mobile-link white-card-bordered">
             <i className="fas fa-box"></i>
             <span>Opción Plus/Minus</span>
-            <span style={{ marginLeft: 'auto', width: '24px', height: '24px', background: 'rgba(0,0,0,0.05)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <i className="fas fa-plus" style={{ fontSize: '0.75rem' }}></i>
+            <span className="margin-left-auto" style={{ width: '24px', height: '24px', background: 'rgba(0,0,0,0.05)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <i className="fas fa-plus icon-small"></i>
             </span>
           </button>
 
           {/* Opción 3: Con dots */}
-          <button className="navbar-mobile-link" style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '8px' }}>
+          <button className="navbar-mobile-link white-card-bordered">
             <i className="fas fa-layer-group"></i>
             <span>Opción con Dots</span>
-            <i className="fas fa-ellipsis-h" style={{ marginLeft: 'auto', color: 'rgba(0,0,0,0.3)' }}></i>
+            <i className="fas fa-ellipsis-h margin-left-auto opacity-30"></i>
           </button>
 
           {/* Opción 4: Minimalista con línea */}
-          <button className="navbar-mobile-link" style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '8px', borderRight: '3px solid black' }}>
+          <button className="navbar-mobile-link white-card-bordered border-right-black-3">
             <i className="fas fa-compass"></i>
             <span>Opción con Línea</span>
           </button>
 
           {/* Opción 5: Con icono doble */}
-          <button className="navbar-mobile-link" style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '8px' }}>
+          <button className="navbar-mobile-link white-card-bordered">
             <i className="fas fa-sitemap"></i>
             <span>Opción Doble Chevron</span>
-            <span style={{ marginLeft: 'auto', color: 'rgba(0,0,0,0.3)' }}>
+            <span className="margin-left-auto opacity-30">
               <i className="fas fa-angle-double-right"></i>
             </span>
           </button>
@@ -258,9 +254,8 @@ function Navigation() {
         
         {/* Botón para abrir sidebar */}
         <button 
-          className="btn btn-primary"
+          className="btn btn-primary margin-bottom-md"
           onClick={() => setSidebarOpen(true)}
-          style={{ marginBottom: '1rem' }}
         >
           <i className="fas fa-bars"></i> Abrir Menú Lateral
         </button>
@@ -318,7 +313,7 @@ function Navigation() {
           {/* Contenido principal */}
           <div className="sidebar-content">
             <div style={{ padding: '2rem', textAlign: 'center', background: 'var(--surface-color)', borderRadius: 'var(--radius-md)', minHeight: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <p style={{ color: 'var(--text-secondary)' }}>
+              <p className="color-text-secondary">
                 Contenido Principal<br/>
                 <small>El sidebar se superpone sin desplazar el contenido</small>
               </p>

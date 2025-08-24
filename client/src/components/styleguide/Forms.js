@@ -404,7 +404,7 @@ function Forms() {
                 Acepto los términos y condiciones
               </label>
             </div>
-            <button type="submit" className="btn btn-primary" style={{ marginTop: '1rem' }}>
+            <button type="submit" className="btn btn-primary margin-top-md">
               Registrar Conductor
             </button>
           </div>

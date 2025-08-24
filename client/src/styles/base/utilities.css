@@ -281,6 +281,20 @@
 .text-nowrap { white-space: nowrap; }
 .text-break { word-break: break-word; }
 
+/* ========================================
+   TAMAÑOS Y DIMENSIONES
+   ======================================== */
+/* Anchos porcentuales */
+.width-15 { width: 15%; }
+.width-25 { width: 25%; }
+.width-35 { width: 35%; }
+.width-50 { width: 50%; }
+.width-60 { width: 60%; }
+.width-75 { width: 75%; }
+.width-80 { width: 80%; }
+.width-90 { width: 90%; }
+.width-100 { width: 100%; }
+
 /* Altura de línea */
 .line-height-tight { line-height: var(--line-height-tight); }
 .line-height-normal { line-height: var(--line-height-normal); }

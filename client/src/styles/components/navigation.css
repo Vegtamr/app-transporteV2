@@ -3,6 +3,79 @@
    Navbar, sidebar, tabs, breadcrumb, pagination
    ======================================== */
 
+/* Clases auxiliares para navegación */
+.flex-row-gap-2 {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.bg-primary-padded {
+  background: var(--primary-color);
+  padding: 1rem;
+}
+
+.grid-gap-1 {
+  display: grid;
+  gap: 1rem;
+}
+
+.white-card-bordered {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+.border-right-black-3 {
+  border-right: 3px solid black;
+}
+
+.text-small-secondary {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.margin-left-auto {
+  margin-left: auto;
+}
+
+.icon-small {
+  font-size: 0.75rem;
+}
+
+.icon-tiny {
+  font-size: 0.6rem;
+}
+
+.icon-extra-tiny {
+  font-size: 0.7rem;
+}
+
+.opacity-30 {
+  opacity: 0.3;
+}
+
+.opacity-40 {
+  opacity: 0.4;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.margin-left-4 {
+  margin-left: 4px;
+}
+
+.margin-left-6 {
+  margin-left: 6px;
+}
+
+.color-secondary {
+  color: var(--secondary-color);
+}
+
 /* ========================================
    NAVBAR PRINCIPAL
    ======================================== */

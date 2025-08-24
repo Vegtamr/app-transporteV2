@@ -3,6 +3,14 @@
    Estilos para tablas y grids de datos
    ======================================== */
 
+/* Utilidades para columnas de tabla */
+.min-width-50 { min-width: 50px; }
+.min-width-80 { min-width: 80px; }
+.min-width-100 { min-width: 100px; }
+.min-width-120 { min-width: 120px; }
+.nowrap { white-space: nowrap; }
+.cursor-pointer { cursor: pointer; }
+
 /* Contenedor de tabla */
 .table-container {
   width: 100%;

@@ -55,14 +55,14 @@ function Notifications() {
 
       <div className="surface-padded-section">
         <h3>Skeleton Loaders</h3>
-        <p style={{ marginBottom: '1rem' }}>Estados de carga minimalistas:</p>
+        <p className="margin-bottom-md">Estados de carga minimalistas:</p>
         
         <div className="skeleton skeleton-title"></div>
         <div className="skeleton skeleton-text"></div>
-        <div className="skeleton skeleton-text" style={{ width: '80%' }}></div>
-        <div className="skeleton skeleton-text" style={{ width: '60%' }}></div>
+        <div className="skeleton skeleton-text width-80"></div>
+        <div className="skeleton skeleton-text width-60"></div>
         
-        <div style={{ marginTop: '2rem' }}>
+        <div className="margin-top-2">
           <div className="skeleton skeleton-card"></div>
         </div>
       </div>
@@ -126,7 +126,7 @@ function Notifications() {
         </div>
 
         {/* Toast Container */}
-        <div style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 1000 }}>
+        <div className="toast-container">
           {toasts.map(toast => (
             <div 
               key={toast.id}
@@ -148,7 +148,7 @@ function Notifications() {
       <div className="surface-padded-section">
         <h3>Badges y Etiquetas</h3>
         
-        <div style={{ marginBottom: '1rem' }}>
+        <div className="margin-bottom-md">
           <span className="badge badge-primary">Primario</span>
           <span className="badge badge-secondary">Secundario</span>
           <span className="badge badge-success">Éxito</span>
@@ -159,12 +159,12 @@ function Notifications() {
           <span className="badge badge-dark">Dark</span>
         </div>
 
-        <div style={{ marginBottom: '1rem' }}>
+        <div className="margin-bottom-md">
           <h4>Badges con Contador</h4>
           <button className="btn btn-primary">
             Notificaciones <span className="badge badge-light">4</span>
           </button>
-          <button className="btn btn-secondary" style={{ marginLeft: '0.5rem' }}>
+          <button className="btn btn-secondary margin-left-half">
             Mensajes <span className="badge badge-danger">99+</span>
           </button>
         </div>
@@ -192,22 +192,22 @@ function Notifications() {
       <div className="surface-padded-section">
         <h3>Progress Bars</h3>
         
-        <div style={{ marginBottom: '1.5rem' }}>
+        <div className="margin-bottom-1-5">
           <label>Progreso de Ruta (75%)</label>
           <div className="progress">
             <div className="progress-bar" style={{ width: '75%' }}>75%</div>
           </div>
         </div>
 
-        <div style={{ marginBottom: '1.5rem' }}>
+        <div className="margin-bottom-1-5">
           <label>Niveles de Combustible</label>
-          <div className="progress" style={{ marginBottom: '0.5rem' }}>
+          <div className="progress margin-bottom-half">
             <div className="progress-bar bg-success" style={{ width: '90%' }}>Bus #001 - 90%</div>
           </div>
-          <div className="progress" style={{ marginBottom: '0.5rem' }}>
+          <div className="progress margin-bottom-half">
             <div className="progress-bar bg-warning" style={{ width: '35%' }}>Van #015 - 35%</div>
           </div>
-          <div className="progress" style={{ marginBottom: '0.5rem' }}>
+          <div className="progress margin-bottom-half">
             <div className="progress-bar bg-danger" style={{ width: '15%' }}>Camión #008 - 15%</div>
           </div>
         </div>

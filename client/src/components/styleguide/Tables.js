@@ -92,43 +92,43 @@ function Tables() {
               <tr>
                 <th 
                   onClick={() => handleSort('id')}
-                  style={{ cursor: 'pointer', minWidth: '50px' }}
+                  className="cursor-pointer min-width-50"
                 >
                   ID {sortConfig.key === 'id' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
                 </th>
                 <th 
                   onClick={() => handleSort('tipo')}
-                  style={{ cursor: 'pointer', minWidth: '80px' }}
+                  className="cursor-pointer min-width-80"
                 >
                   Tipo {sortConfig.key === 'tipo' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
                 </th>
                 <th 
                   onClick={() => handleSort('modelo')}
-                  style={{ cursor: 'pointer', minWidth: '120px' }}
+                  className="cursor-pointer min-width-120"
                 >
                   Modelo {sortConfig.key === 'modelo' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
                 </th>
-                <th style={{ minWidth: '80px' }}>Placa</th>
+                <th className="min-width-80">Placa</th>
                 <th 
                   onClick={() => handleSort('estado')}
-                  style={{ cursor: 'pointer', minWidth: '100px' }}
+                  className="cursor-pointer min-width-100"
                 >
                   Estado {sortConfig.key === 'estado' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
                 </th>
                 <th 
                   onClick={() => handleSort('kilometraje')}
-                  style={{ cursor: 'pointer', minWidth: '100px' }}
+                  className="cursor-pointer min-width-100"
                 >
                   Kilometraje {sortConfig.key === 'kilometraje' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
                 </th>
-                <th style={{ minWidth: '120px' }}>Acciones</th>
+                <th className="min-width-120">Acciones</th>
               </tr>
             </thead>
             <tbody>
               {sortedVehiculos.map(vehiculo => (
                 <tr key={vehiculo.id}>
                   <td>{vehiculo.id}</td>
-                  <td style={{ whiteSpace: 'nowrap' }}>
+                  <td className="nowrap">
                     <i className={`fas fa-${vehiculo.tipo.toLowerCase()} text-primary`}></i> {vehiculo.tipo}
                   </td>
                   <td>{vehiculo.modelo}</td>
@@ -138,7 +138,7 @@ function Tables() {
                       {vehiculo.estado}
                     </span>
                   </td>
-                  <td style={{ whiteSpace: 'nowrap' }}>{vehiculo.kilometraje.toLocaleString()} km</td>
+                  <td className="nowrap">{vehiculo.kilometraje.toLocaleString()} km</td>
                   <td>
                     <div className="btn-group">
                       <button className="btn btn-size-sm btn-outline-primary">
@@ -161,7 +161,7 @@ function Tables() {
 
       <div className="surface-padded-section">
         <h3>Tabla con Scroll Horizontal (Móvil)</h3>
-        <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
+        <p className="text-sm text-secondary margin-bottom-md">
           <i className="fas fa-info-circle"></i> En dispositivos móviles, la tabla permite scroll horizontal
         </p>
         <div className="table-responsive">
@@ -216,7 +216,7 @@ function Tables() {
 
       <div className="surface-padded-section">
         <h3>Tabla Responsiva en Formato Cards (Móvil)</h3>
-        <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
+        <p className="text-sm text-secondary margin-bottom-md">
           <i className="fas fa-mobile-alt"></i> Vista optimizada para dispositivos móviles
         </p>
         
