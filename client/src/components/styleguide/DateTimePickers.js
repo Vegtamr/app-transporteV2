@@ -26,6 +26,8 @@ function DateTimePickers() {
                 placeholderText="Seleccionar fecha"
                 dateFormat="dd/MM/yyyy"
                 className="form-control"
+                minDate={new Date()}
+                onFocus={(e) => e.target.blur()}
               />
             </div>
 
@@ -41,6 +43,7 @@ function DateTimePickers() {
                 dateFormat="HH:mm"
                 placeholderText="Seleccionar hora"
                 className="form-control"
+                onFocus={(e) => e.target.blur()}
               />
             </div>
           </div>
@@ -54,6 +57,8 @@ function DateTimePickers() {
               dateFormat="dd/MM/yyyy HH:mm"
               placeholderText="Seleccionar fecha y hora"
               className="form-control"
+              minDate={new Date()}
+              onFocus={(e) => e.target.blur()}
             />
           </div>
 
@@ -71,19 +76,10 @@ function DateTimePickers() {
               placeholderText="Seleccionar rango"
               dateFormat="dd/MM/yyyy"
               className="form-control"
+              minDate={new Date()}
+              onFocus={(e) => e.target.blur()}
             />
           </div>
-        </div>
-      </div>
-
-      <div className="card" style={{ marginTop: '20px' }}>
-        <div className="card-content">
-          <h4>Calendario Inline</h4>
-          <DatePicker
-            selected={selectedDate}
-            onChange={(date) => setSelectedDate(date)}
-            inline
-          />
         </div>
       </div>
     </div>
