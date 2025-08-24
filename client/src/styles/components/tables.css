@@ -11,6 +11,29 @@
 .nowrap { white-space: nowrap; }
 .cursor-pointer { cursor: pointer; }
 
+/* Botones de acción cuadrados en móviles */
+@media (max-width: 767px) {
+  .table .btn-group .btn-size-sm {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    margin-right: 4px;
+  }
+  
+  .table .btn-group .btn-size-sm:last-child {
+    margin-right: 0;
+  }
+  
+  .table .btn-group {
+    display: flex;
+    gap: 0;
+  }
+}
+
 /* Contenedor de tabla */
 .table-container {
   width: 100%;

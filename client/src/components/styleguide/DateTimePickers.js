@@ -54,10 +54,18 @@ function DateTimePickers() {
               selected={selectedDateTime}
               onChange={(date) => setSelectedDateTime(date)}
               showTimeSelect
+              timeIntervals={15}
               dateFormat="dd/MM/yyyy HH:mm"
               placeholderText="Seleccionar fecha y hora"
               className="form-control"
               minDate={new Date()}
+              minTime={
+                (!selectedDateTime || 
+                 new Date(selectedDateTime).toDateString() === new Date().toDateString())
+                  ? new Date()
+                  : new Date(new Date().setHours(0, 0, 0, 0))
+              }
+              maxTime={new Date(new Date().setHours(23, 59, 59, 999))}
               onFocus={(e) => e.target.blur()}
             />
           </div>
