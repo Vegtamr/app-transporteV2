@@ -3,6 +3,23 @@
    Navbar, sidebar, tabs, breadcrumb, pagination
    ======================================== */
 
+/* Estilos para Logo */
+.logo-container {
+  transition: transform 0.3s ease;
+}
+
+.logo-container.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.logo-white {
+  filter: brightness(0) invert(1);
+}
+
+.logo-dark {
+  filter: brightness(0);
+}
+
 /* Clases auxiliares para navegación */
 .flex-row-gap-2 {
   display: flex;

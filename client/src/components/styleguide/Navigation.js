@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Logo from './Logo';
 
 function Navigation() {
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -15,7 +16,7 @@ function Navigation() {
           <nav className="navbar">
             <div className="navbar-container">
               <div className="navbar-brand">
-                <img src="/img/logo.png" alt="Logo" className="navbar-logo" />
+                <Logo size="large" />
               </div>
 
               <ul className="navbar-menu">
@@ -272,7 +273,7 @@ function Navigation() {
           {/* Sidebar deslizante */}
           <aside className={`sidebar-responsive ${sidebarOpen ? 'active' : ''}`}>
             <div className="sidebar-header">
-              <img src="/img/logo.png" alt="Logo" className="sidebar-logo" />
+              <Logo size="medium" />
               <button 
                 className="sidebar-close"
                 onClick={() => setSidebarOpen(false)}

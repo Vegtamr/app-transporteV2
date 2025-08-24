@@ -35,6 +35,7 @@
 @import './components/navigation.css';    /* Navbar, sidebar, tabs */
 @import './components/notifications.css'; /* Alerts, toasts, badges */
 @import './components/datepickers.css';   /* Date y time pickers */
+@import './components/logo.css';          /* Logo component */
 
 /* ========================================
    ESTILOS ESPECÍFICOS DEL STYLEGUIDE

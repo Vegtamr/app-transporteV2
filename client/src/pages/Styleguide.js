@@ -6,6 +6,7 @@ import Forms from '../components/styleguide/Forms';
 import Cards from '../components/styleguide/Cards';
 import Tables from '../components/styleguide/Tables';
 import Notifications from '../components/styleguide/Notifications';
+import Logo from '../components/styleguide/Logo';
 import Navigation from '../components/styleguide/Navigation';
 import DesignGuide from '../components/styleguide/DesignGuide';
 import DateTimePickers from '../components/styleguide/DateTimePickers';
@@ -15,6 +16,7 @@ function Styleguide() {
 
   const tabs = [
     { id: 'guide', label: 'Guía', icon: 'fa-book' },
+    { id: 'logo', label: 'Logo', icon: 'fa-image' },
     { id: 'colors', label: 'Colores', icon: 'fa-palette' },
     { id: 'typography', label: 'Tipografía', icon: 'fa-font' },
     { id: 'buttons', label: 'Botones', icon: 'fa-square' },
@@ -29,6 +31,7 @@ function Styleguide() {
   const renderContent = () => {
     switch(activeTab) {
       case 'guide': return <DesignGuide />;
+      case 'logo': return <LogoShowcase />;
       case 'colors': return <ColorPalette />;
       case 'typography': return <Typography />;
       case 'buttons': return <Buttons />;
@@ -41,6 +44,80 @@ function Styleguide() {
       default: return <DesignGuide />;
     }
   };
+
+  // Componente para mostrar variantes del Logo
+  const LogoShowcase = () => (
+    <section className="section-plain">
+      <h2>Logo y Marca</h2>
+      
+      <div className="surface-padded-section">
+        <h3>Tamaños</h3>
+        <div className="display-flex align-center gap-lg flex-wrap">
+          <div className="text-center">
+            <Logo size="xs" />
+            <p className="text-sm margin-top-sm">XS (24px)</p>
+          </div>
+          <div className="text-center">
+            <Logo size="small" />
+            <p className="text-sm margin-top-sm">Small (32px)</p>
+          </div>
+          <div className="text-center">
+            <Logo size="medium" />
+            <p className="text-sm margin-top-sm">Medium (48px)</p>
+          </div>
+          <div className="text-center">
+            <Logo size="large" />
+            <p className="text-sm margin-top-sm">Large (64px)</p>
+          </div>
+          <div className="text-center">
+            <Logo size="xl" />
+            <p className="text-sm margin-top-sm">XL (96px)</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="surface-padded-section bg-secondary">
+        <h3 className="text-white">Variante Blanca</h3>
+        <div className="display-flex align-center gap-lg">
+          <Logo size="medium" variant="white" />
+        </div>
+      </div>
+
+      <div className="surface-padded-section">
+        <h3>Con Interacción</h3>
+        <Logo 
+          size="medium" 
+          showText={true} 
+          onClick={() => alert('Logo clickeado!')} 
+          className="hover-scale"
+        />
+        <p className="text-sm margin-top-sm">Click para probar interacción</p>
+      </div>
+
+      <div className="surface-padded-section">
+        <h3>Código de Uso</h3>
+        <pre className="code-block">
+{`// Importar
+import Logo from './components/styleguide/Logo';
+
+// Uso básico
+<Logo />
+
+// Con tamaño
+<Logo size="large" />
+
+// Con texto
+<Logo showText={true} />
+
+// Variante blanca
+<Logo variant="white" />
+
+// Con click handler
+<Logo onClick={handleClick} />`}
+        </pre>
+      </div>
+    </section>
+  );
 
   return (
     <div className="styleguide-container">

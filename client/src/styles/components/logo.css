@@ -1,0 +1,110 @@
+/* ========================================
+   COMPONENTES - LOGO
+   Estilos para el componente Logo
+   ======================================== */
+
+/* Contenedor del logo */
+.logo-container {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.logo-container-clickable {
+  cursor: pointer;
+}
+
+/* Gaps según tamaño */
+.logo-container-xs,
+.logo-container-small {
+  gap: 8px;
+}
+
+.logo-container-medium,
+.logo-container-large,
+.logo-container-xl {
+  gap: 12px;
+}
+
+/* Tamaños del logo */
+.logo-xs {
+  height: 24px;
+  width: auto;
+}
+
+.logo-small {
+  height: 32px;
+  width: auto;
+}
+
+.logo-medium {
+  height: 48px;
+  width: auto;
+}
+
+.logo-large {
+  height: 64px;
+  width: auto;
+}
+
+.logo-xl {
+  height: 96px;
+  width: auto;
+}
+
+/* Transición para el logo */
+.logo {
+  transition: transform 0.3s ease;
+}
+
+/* Texto del logo */
+.logo-text {
+  font-weight: 600;
+}
+
+.logo-text-xs {
+  font-size: 0.875rem;
+}
+
+.logo-text-small {
+  font-size: 1rem;
+}
+
+.logo-text-medium {
+  font-size: 1.25rem;
+}
+
+.logo-text-large {
+  font-size: 1.5rem;
+}
+
+.logo-text-xl {
+  font-size: 2rem;
+}
+
+/* Variantes de color */
+.logo-text-default {
+  color: var(--secondary-color);
+}
+
+.logo-text-white {
+  color: white;
+}
+
+.logo-text-dark {
+  color: var(--text-color);
+}
+
+/* Filtros para variantes del logo */
+.logo-white {
+  filter: brightness(0) invert(1);
+}
+
+.logo-dark {
+  filter: brightness(0);
+}
+
+/* Efecto hover */
+.logo-container.hover-scale:hover {
+  transform: scale(1.05);
+}
