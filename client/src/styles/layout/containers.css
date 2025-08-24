@@ -168,6 +168,11 @@
   animation: fadeIn 0.3s ease;
 }
 
+/* Sección sin estilos de encabezados - para componentes con elementos internos */
+.section-plain {
+  animation: fadeIn 0.3s ease;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

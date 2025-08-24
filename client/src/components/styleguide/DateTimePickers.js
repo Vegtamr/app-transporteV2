@@ -10,7 +10,7 @@ function DateTimePickers() {
   const [endDate, setEndDate] = useState(null);
 
   return (
-    <div className="datepicker-container">
+    <section className="section-plain">
       <h2>Selectores de Fecha y Hora - React DatePicker</h2>
       
       <div className="card">
@@ -82,7 +82,7 @@ function DateTimePickers() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -3,18 +3,6 @@
    Estilos para selectores de fecha y hora
    ======================================== */
 
-/* Contenedor principal con padding responsivo */
-.datepicker-container {
-  padding: 20px;
-}
-
-/* Reducir padding en móviles para más espacio */
-@media (max-width: 767px) {
-  .datepicker-container {
-    padding: 10px;
-  }
-}
-
 /* React DatePicker - Hacer que el wrapper ocupe todo el ancho */
 .react-datepicker-wrapper {
   width: 100%;
