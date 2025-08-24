@@ -130,6 +130,10 @@ function Forms() {
                 placeholder="Escriba para buscar direcciones..."
                 value={searchTerm}
                 title={searchTerm.length > 40 ? searchTerm : ''}
+                autoComplete="off"
+                autoCorrect="off"
+                autoCapitalize="off"
+                spellCheck="false"
                 onChange={(e) => {
                   setSearchTerm(e.target.value);
                   setShowDropdown(true);

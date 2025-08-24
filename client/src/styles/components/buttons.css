@@ -11,26 +11,41 @@
   100% { transform: rotate(360deg); }
 }
 
-.btn.loading {
+.btn.loading,
+.btn-loading {
   position: relative;
-  color: transparent;
+  color: transparent !important;
   pointer-events: none;
   cursor: wait;
 }
 
-.btn.loading::after {
+.btn.loading::after,
+.btn-loading::after {
   content: "";
   position: absolute;
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   top: 50%;
   left: 50%;
-  margin-left: -8px;
-  margin-top: -8px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  margin-left: -10px;
+  margin-top: -10px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
   border-top-color: white;
   border-radius: 50%;
-  animation: spin 0.6s linear infinite;
+  animation: spin 0.75s linear infinite;
+}
+
+/* Ajuste para botones con fondo claro */
+.btn-light.loading::after,
+.btn-light.btn-loading::after,
+.btn-outline-primary.loading::after,
+.btn-outline-secondary.loading::after,
+.btn-outline-success.loading::after,
+.btn-outline-danger.loading::after,
+.btn-outline-warning.loading::after,
+.btn-outline-info.loading::after {
+  border-color: rgba(0, 0, 0, 0.2);
+  border-top-color: #333;
 }
 
 /* ========================================
@@ -365,38 +380,6 @@
   box-shadow: none;
 }
 
-/* ========================================
-   ESTADOS DE BOTÓN
-   ======================================== */
-.btn-loading {
-  position: relative;
-  color: transparent;
-  pointer-events: none;
-}
-
-.btn-loading::after {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  top: 50%;
-  left: 50%;
-  margin-left: -8px;
-  margin-top: -8px;
-  border: 2px solid currentColor;
-  border-radius: 50%;
-  border-right-color: transparent;
-  animation: btn-loading-spinner 0.75s linear infinite;
-}
-
-@keyframes btn-loading-spinner {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 /* ========================================
    BOTONES FLOTANTES (FAB)

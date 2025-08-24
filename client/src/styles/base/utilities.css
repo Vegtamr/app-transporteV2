@@ -43,12 +43,6 @@
 .justify-around { justify-content: space-around; }
 .justify-evenly { justify-content: space-evenly; }
 
-.align-start { align-items: flex-start; }
-.align-end { align-items: flex-end; }
-.align-center { align-items: center; }
-.align-baseline { align-items: baseline; }
-.align-stretch { align-items: stretch; }
-
 .flex-grow-0 { flex-grow: 0; }
 .flex-grow-1 { flex-grow: 1; }
 .flex-shrink-0 { flex-shrink: 0; }
@@ -306,10 +300,6 @@
 .bg-transparent { background-color: transparent; }
 
 /* Gradientes */
-.bg-gradient-primary { background: var(--gradient-primary); }
-.bg-gradient-subtle { background: var(--gradient-subtle); }
-.bg-gradient-secondary { background: var(--gradient-secondary); }
-
 /* ========================================
    BORDES
    ======================================== */
@@ -344,11 +334,7 @@
    ======================================== */
 .shadow-none { box-shadow: none; }
 .shadow-xs { box-shadow: var(--shadow-xs); }
-.shadow-sm { box-shadow: var(--shadow-sm); }
 .shadow { box-shadow: var(--shadow-md); }
-.shadow-lg { box-shadow: var(--shadow-lg); }
-.shadow-xl { box-shadow: var(--shadow-xl); }
-
 /* ========================================
    OVERFLOW
    ======================================== */

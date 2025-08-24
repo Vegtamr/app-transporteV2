@@ -168,6 +168,15 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  
+  /* Excepción para spinners de carga - siempre deben ser visibles */
+  .btn.loading::after,
+  .btn-loading::after,
+  .spinner,
+  .loading-spinner {
+    animation-duration: 0.75s !important;
+    animation-iteration-count: infinite !important;
+  }
 }
 
 /* Esquema de colores oscuro */
@@ -335,8 +344,7 @@
   }
   
   /* Reducir sombras costosas */
-  .shadow-lg,
-  .shadow-xl {
-    box-shadow: var(--shadow-sm);
+  .shadow-lg {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12) !important;
   }
 }
