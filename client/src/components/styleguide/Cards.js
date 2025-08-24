@@ -9,7 +9,7 @@ function Cards() {
       <div className="surface-padded-section">
         <h3>Card Básica</h3>
         <div className="card">
-          <div className="card-body">
+          <div className="card-content">
             <h5 className="card-title">Título de la Card</h5>
             <p className="card-text">
               Este es el contenido de una card básica. Puede contener texto, 
@@ -132,10 +132,10 @@ function Cards() {
               <div className="stat-icon bg-primary">
                 <i className="fas fa-car"></i>
               </div>
-              <div className="stat-content">
+              <div className="stat-details">
                 <h3>45</h3>
                 <p>Vehículos Activos</p>
-                <span className="stat-change positive">
+                <span className="stat-trend-indicator positive">
                   <i className="fas fa-arrow-up"></i> 12%
                 </span>
               </div>
@@ -147,10 +147,10 @@ function Cards() {
               <div className="stat-icon bg-success">
                 <i className="fas fa-route"></i>
               </div>
-              <div className="stat-content">
+              <div className="stat-details">
                 <h3>128</h3>
                 <p>Rutas Completadas</p>
-                <span className="stat-change positive">
+                <span className="stat-trend-indicator positive">
                   <i className="fas fa-arrow-up"></i> 8%
                 </span>
               </div>
@@ -162,10 +162,10 @@ function Cards() {
               <div className="stat-icon bg-warning">
                 <i className="fas fa-gas-pump"></i>
               </div>
-              <div className="stat-content">
+              <div className="stat-details">
                 <h3>2,450L</h3>
                 <p>Combustible Consumido</p>
-                <span className="stat-change negative">
+                <span className="stat-trend-indicator negative">
                   <i className="fas fa-arrow-down"></i> 5%
                 </span>
               </div>
@@ -177,10 +177,10 @@ function Cards() {
               <div className="stat-icon bg-info">
                 <i className="fas fa-users"></i>
               </div>
-              <div className="stat-content">
+              <div className="stat-details">
                 <h3>32</h3>
                 <p>Conductores</p>
-                <span className="stat-change neutral">
+                <span className="stat-trend-indicator neutral">
                   <i className="fas fa-minus"></i> 0%
                 </span>
               </div>
@@ -198,7 +198,7 @@ function Cards() {
             alt="Vehículo"
             placeholder="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%23f8f9fa'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%236c757d' font-family='sans-serif'%3ECargando...%3C/text%3E%3C/svg%3E"
           />
-          <div className="card-body">
+          <div className="card-content">
             <h5 className="card-title">Nuevo Vehículo Disponible</h5>
             <p className="card-text">
               Se ha agregado un nuevo bus a la flota. Modelo 2024 con capacidad 

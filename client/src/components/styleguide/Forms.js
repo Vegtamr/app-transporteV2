@@ -48,9 +48,9 @@ function Forms() {
 
       <div className="surface-padded-section">
         <h3>Campos de Texto</h3>
-        <div className="form-container">
+        <div className="form-flex-centered">
           <div className="form-card">
-            <form className="form-example">
+            <form>
               <div className="form-group">
                 <label htmlFor="nombre" className="form-label">Nombre Completo</label>
                 <input 
@@ -121,7 +121,7 @@ function Forms() {
           <label htmlFor="address-search" className="form-label">
             Buscar Dirección (Autocomplete)
           </label>
-          <div className="autocomplete-wrapper">
+          <div className="position-relative-container">
             <div className="input-with-icon">
               <input
                 type="text"
@@ -149,7 +149,7 @@ function Forms() {
               )}
               {!isLoading && searchTerm && (
                 <button 
-                  className="input-clear-btn"
+                  className="input-action-button"
                   onClick={() => {
                     setSearchTerm('');
                     setSelectedAddress('');
@@ -164,7 +164,7 @@ function Forms() {
             {showDropdown && searchTerm.length > 0 && (
               <div className="autocomplete-dropdown">
                 {isLoading ? (
-                  <div className="dropdown-item-loading">
+                  <div className="state-loading-centered">
                     <i className="fas fa-spinner fa-spin"></i>
                     <span>Buscando direcciones...</span>
                   </div>
@@ -192,7 +192,7 @@ function Forms() {
                     </div>
                   ))
                 ) : (
-                  <div className="dropdown-item-empty">
+                  <div className="state-empty-centered">
                     <i className="fas fa-exclamation-circle"></i>
                     <span>No se encontraron direcciones</span>
                   </div>
@@ -220,7 +220,7 @@ function Forms() {
               readOnly
               title="Av. Libertador Bernardo O'Higgins 1234, Santiago Centro, Región Metropolitana, Chile - Código Postal 8320000"
             />
-            <span className="input-fade-overlay"></span>
+            <span className="text-overflow-gradient"></span>
           </div>
           <small className="form-text">
             <i className="fas fa-info-circle"></i> El texto largo se trunca con ellipsis. Al hacer focus, se muestra completo.

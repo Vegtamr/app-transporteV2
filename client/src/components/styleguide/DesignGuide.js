@@ -86,7 +86,7 @@ function MiComponente() {
         alt="Descripción"
         className="card-img-top"
       />
-      <div className="card-body">
+      <div className="card-content">
         <h3 className="card-title">Título</h3>
         <button className="btn btn-primary">
           Acción

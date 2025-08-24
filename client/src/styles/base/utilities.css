@@ -237,6 +237,7 @@
 .text-secondary { color: var(--secondary-color); }
 .text-success { color: var(--success-color); }
 .text-danger { color: var(--danger-color); }
+.text-gray { color: var(--text-secondary); }
 .text-warning { color: var(--warning-color); }
 .text-info { color: var(--info-color); }
 .text-muted { color: var(--text-secondary); }

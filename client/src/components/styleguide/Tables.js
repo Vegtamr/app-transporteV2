@@ -258,7 +258,7 @@ function Tables() {
         {/* Vista Mobile (Cards) */}
         <div className="table-mobile">
           <div className="mobile-card">
-            <div className="mobile-card-heading">
+            <div className="mobile-card-header">
               <span className="mobile-card-id">#001</span>
               <span className="badge badge-success">Activo</span>
             </div>
@@ -278,7 +278,7 @@ function Tables() {
           </div>
 
           <div className="mobile-card">
-            <div className="mobile-card-heading">
+            <div className="mobile-card-header">
               <span className="mobile-card-id">#015</span>
               <span className="badge badge-warning">Mantenimiento</span>
             </div>

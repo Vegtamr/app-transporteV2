@@ -316,7 +316,7 @@ function Navigation() {
           </aside>
 
           {/* Contenido principal */}
-          <div className="sidebar-main-content">
+          <div className="sidebar-content">
             <div style={{ padding: '2rem', textAlign: 'center', background: 'var(--surface-color)', borderRadius: 'var(--radius-md)', minHeight: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <p style={{ color: 'var(--text-secondary)' }}>
                 Contenido Principal<br/>
