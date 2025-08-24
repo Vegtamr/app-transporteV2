@@ -10,7 +10,7 @@ function DateTimePickers() {
   const [endDate, setEndDate] = useState(null);
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div className="datepicker-container">
       <h2>Selectores de Fecha y Hora - React DatePicker</h2>
       
       <div className="card">
