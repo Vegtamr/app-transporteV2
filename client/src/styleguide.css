@@ -683,104 +683,33 @@ a:hover {
 /* ========================================
    COMPONENTES - DATE TIME PICKERS
    ======================================== */
-.date-range-container {
-  display: flex;
-  align-items: flex-end;
-  gap: var(--space-md);
-  flex-wrap: wrap;
+/* Los estilos de React DatePicker usan los estilos por defecto de la librería */
+
+/* Wrapper para calendario inline */
+.datepicker-inline-wrapper {
+  display: inline-block;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-sm);
+  background: var(--surface-color);
 }
 
-.date-range-separator {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 44px;
-  color: var(--text-secondary);
-  font-size: 1.2rem;
-}
-
-.input-icon-left {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--text-secondary);
-  pointer-events: none;
-  z-index: 1;
-}
-
-.input-with-icon input[type="date"],
-.input-with-icon input[type="time"],
-.input-with-icon input[type="datetime-local"] {
+/* Input con icono para datepicker */
+.input-with-icon .form-control.with-icon {
   padding-left: 40px;
 }
 
-/* Grid para fecha y hora */
-.datetime-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--space-md);
+/* Tamaños de form-control */
+.form-control-sm {
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--font-size-sm);
+  min-height: 36px;
 }
 
-/* Estilos personalizados para inputs de fecha/hora */
-input[type="date"],
-input[type="time"],
-input[type="datetime-local"],
-input[type="month"],
-input[type="week"] {
-  cursor: pointer;
-  position: relative;
-}
-
-input[type="date"]::-webkit-calendar-picker-indicator,
-input[type="time"]::-webkit-calendar-picker-indicator,
-input[type="datetime-local"]::-webkit-calendar-picker-indicator,
-input[type="month"]::-webkit-calendar-picker-indicator,
-input[type="week"]::-webkit-calendar-picker-indicator {
-  cursor: pointer;
-  opacity: 0.6;
-  transition: opacity 0.2s ease;
-}
-
-input[type="date"]:hover::-webkit-calendar-picker-indicator,
-input[type="time"]:hover::-webkit-calendar-picker-indicator,
-input[type="datetime-local"]:hover::-webkit-calendar-picker-indicator,
-input[type="month"]:hover::-webkit-calendar-picker-indicator,
-input[type="week"]:hover::-webkit-calendar-picker-indicator {
-  opacity: 1;
-}
-
-/* Estilo cuando hay valor seleccionado */
-input[type="date"]:valid,
-input[type="time"]:valid,
-input[type="datetime-local"]:valid {
-  color: var(--text-color);
-  font-weight: 500;
-}
-
-/* Placeholder para inputs de fecha vacíos */
-input[type="date"]:invalid,
-input[type="time"]:invalid,
-input[type="datetime-local"]:invalid {
-  color: var(--text-secondary);
-}
-
-/* Responsive para móviles */
-@media (max-width: 576px) {
-  .date-range-container {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  
-  .date-range-separator {
-    transform: rotate(90deg);
-    height: 30px;
-    margin: var(--space-xs) 0;
-  }
-  
-  .datetime-grid {
-    grid-template-columns: 1fr;
-  }
+.form-control-lg {
+  padding: var(--space-md) var(--space-lg);
+  font-size: var(--font-size-lg);
+  min-height: 52px;
 }
 
 .form-check {

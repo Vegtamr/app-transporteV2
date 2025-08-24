@@ -1,37 +1,49 @@
 import React, { useState } from 'react';
+import DatePicker, { registerLocale } from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import es from 'date-fns/locale/es';
+
+// Registrar el idioma español con formato personalizado
+registerLocale('es', es);
+
+// Formato personalizado para el header del calendario
+const customHeaderFormat = "MMM yyyy";
 
 function DateTimePickers() {
-  const [selectedDate, setSelectedDate] = useState('');
-  const [selectedTime, setSelectedTime] = useState('');
-  const [selectedDateTime, setSelectedDateTime] = useState('');
-  const [selectedMonth, setSelectedMonth] = useState('');
-  const [selectedWeek, setSelectedWeek] = useState('');
-  const [dateRange, setDateRange] = useState({ start: '', end: '' });
-
-  // Obtener fecha de hoy para min/max
-  const today = new Date().toISOString().split('T')[0];
-  const currentTime = new Date().toTimeString().slice(0, 5);
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedTime, setSelectedTime] = useState(null);
+  const [selectedDateTime, setSelectedDateTime] = useState(null);
+  const [dateRange, setDateRange] = useState([null, null]);
+  const [startDate, endDate] = dateRange;
+  const [inlineDate, setInlineDate] = useState(new Date());
+  const [monthYear, setMonthYear] = useState(null);
+  const [multiDates, setMultiDates] = useState([]);
 
   return (
     <section className="section">
-      <h2>Selectores de Fecha y Hora</h2>
+      <h2>Selectores de Fecha y Hora - React DatePicker</h2>
 
       <div className="example-group">
-        <h3>Selector de Fecha</h3>
+        <h3>Selectores Básicos</h3>
+        
         <div className="form-group">
-          <label htmlFor="date-basic" className="form-label">
+          <label className="form-label">
             Fecha básica
           </label>
-          <input
-            type="date"
-            id="date-basic"
+          <DatePicker
+            selected={selectedDate}
+            onChange={(date) => setSelectedDate(date)}
             className="form-control"
-            value={selectedDate}
-            onChange={(e) => setSelectedDate(e.target.value)}
+            placeholderText="Seleccionar fecha"
+            dateFormat="dd/MM/yyyy"
+            dateFormatCalendarHeader={customHeaderFormat}
+            locale="es"
+            isClearable
+            showPopperArrow={false}
           />
           {selectedDate && (
             <small className="form-text">
-              Fecha seleccionada: {new Date(selectedDate).toLocaleDateString('es-CL', {
+              Fecha: {selectedDate.toLocaleDateString('es-CL', {
                 weekday: 'long',
                 year: 'numeric',
                 month: 'long',
@@ -42,224 +54,225 @@ function DateTimePickers() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="date-restricted" className="form-label">
-            Fecha con restricciones (Solo fechas futuras)
+          <label className="form-label">
+            Solo hora
           </label>
-          <input
-            type="date"
-            id="date-restricted"
+          <DatePicker
+            selected={selectedTime}
+            onChange={(date) => setSelectedTime(date)}
+            showTimeSelect
+            showTimeSelectOnly
+            timeIntervals={15}
+            timeCaption="Hora"
+            dateFormat="HH:mm"
             className="form-control"
-            min={today}
-            max="2024-12-31"
+            placeholderText="Seleccionar hora"
+            locale="es"
+            showPopperArrow={false}
           />
-          <small className="form-text">
-            Solo permite seleccionar desde hoy hasta fin de año
-          </small>
         </div>
 
         <div className="form-group">
-          <label htmlFor="date-required" className="form-label">
-            Fecha requerida *
+          <label className="form-label">
+            Fecha y hora combinados
           </label>
-          <input
-            type="date"
-            id="date-required"
+          <DatePicker
+            selected={selectedDateTime}
+            onChange={(date) => setSelectedDateTime(date)}
+            showTimeSelect
+            timeFormat="HH:mm"
+            timeIntervals={30}
+            dateFormat="dd/MM/yyyy HH:mm"
+            timeCaption="Hora"
             className="form-control"
-            required
-            defaultValue={today}
+            placeholderText="Seleccionar fecha y hora"
+            locale="es"
+            showPopperArrow={false}
           />
         </div>
       </div>
 
       <div className="example-group">
-        <h3>Selector de Hora</h3>
+        <h3>Selectores con Restricciones</h3>
+        
         <div className="form-group">
-          <label htmlFor="time-basic" className="form-label">
-            Hora básica
+          <label className="form-label">
+            Solo fechas futuras (próximos 30 días)
           </label>
-          <input
-            type="time"
-            id="time-basic"
+          <DatePicker
+            selected={null}
+            onChange={(date) => {}}
             className="form-control"
-            value={selectedTime}
-            onChange={(e) => setSelectedTime(e.target.value)}
+            placeholderText="Solo fechas futuras"
+            dateFormat="dd/MM/yyyy"
+            locale="es"
+            minDate={new Date()}
+            maxDate={new Date(new Date().setDate(new Date().getDate() + 30))}
+            showPopperArrow={false}
           />
-          {selectedTime && (
-            <small className="form-text">
-              Hora seleccionada: {selectedTime}
+        </div>
+
+        <div className="form-group">
+          <label className="form-label">
+            Días laborales únicamente (L-V)
+          </label>
+          <DatePicker
+            selected={null}
+            onChange={(date) => {}}
+            className="form-control"
+            placeholderText="Solo días laborales"
+            dateFormat="dd/MM/yyyy"
+            locale="es"
+            filterDate={(date) => {
+              const day = date.getDay();
+              return day !== 0 && day !== 6;
+            }}
+            showPopperArrow={false}
+          />
+        </div>
+
+        <div className="form-group">
+          <label className="form-label">
+            Con días destacados y excluidos
+          </label>
+          <DatePicker
+            selected={null}
+            onChange={(date) => {}}
+            className="form-control"
+            placeholderText="Días específicos"
+            dateFormat="dd/MM/yyyy"
+            locale="es"
+            excludeDates={[
+              new Date(),
+              new Date(new Date().setDate(new Date().getDate() + 1))
+            ]}
+            highlightDates={[
+              { "react-datepicker__day--highlighted-custom-1": [new Date(new Date().setDate(new Date().getDate() + 7))] },
+              { "react-datepicker__day--highlighted-custom-2": [new Date(new Date().setDate(new Date().getDate() + 14))] }
+            ]}
+            showPopperArrow={false}
+          />
+          <small className="form-text">
+            Hoy y mañana deshabilitados, próximas semanas destacadas
+          </small>
+        </div>
+      </div>
+
+      <div className="example-group">
+        <h3>Selectores Avanzados</h3>
+        
+        <div className="form-group">
+          <label className="form-label">
+            Rango de fechas
+          </label>
+          <DatePicker
+            selectsRange={true}
+            startDate={startDate}
+            endDate={endDate}
+            onChange={(update) => setDateRange(update)}
+            className="form-control"
+            placeholderText="Seleccionar rango"
+            dateFormat="dd/MM/yyyy"
+            locale="es"
+            isClearable={true}
+            showPopperArrow={false}
+          />
+          {startDate && endDate && (
+            <small className="form-text text-success">
+              <i className="fas fa-check-circle"></i> {' '}
+              {Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24)) + 1} días seleccionados
             </small>
           )}
         </div>
 
         <div className="form-group">
-          <label htmlFor="time-step" className="form-label">
-            Hora con intervalos de 15 minutos
+          <label className="form-label">
+            Selector de mes y año
           </label>
-          <input
-            type="time"
-            id="time-step"
+          <DatePicker
+            selected={monthYear}
+            onChange={(date) => setMonthYear(date)}
+            dateFormat="MM/yyyy"
+            showMonthYearPicker
             className="form-control"
-            step="900"
+            placeholderText="Seleccionar mes"
+            locale="es"
+            showPopperArrow={false}
           />
-          <small className="form-text">
-            Solo permite seleccionar en intervalos de 15 minutos
-          </small>
         </div>
 
         <div className="form-group">
-          <label htmlFor="time-restricted" className="form-label">
-            Horario de oficina (08:00 - 18:00)
+          <label className="form-label">
+            Selección múltiple de fechas
           </label>
-          <input
-            type="time"
-            id="time-restricted"
+          <DatePicker
+            selectedDates={multiDates}
+            onChange={(dates) => setMultiDates(dates)}
+            shouldCloseOnSelect={false}
+            disabledKeyboardNavigation
+            placeholderText="Seleccionar múltiples fechas"
             className="form-control"
-            min="08:00"
-            max="18:00"
-            defaultValue="09:00"
+            dateFormat="dd/MM/yyyy"
+            locale="es"
+            isClearable
+            multidate
+            showPopperArrow={false}
           />
+          {multiDates.length > 0 && (
+            <small className="form-text">
+              {multiDates.length} fechas seleccionadas
+            </small>
+          )}
         </div>
       </div>
 
       <div className="example-group">
-        <h3>Selector de Fecha y Hora Combinado</h3>
+        <h3>Calendario Inline</h3>
         <div className="form-group">
-          <label htmlFor="datetime-local" className="form-label">
-            Fecha y hora completa
+          <label className="form-label">
+            Calendario siempre visible
           </label>
-          <input
-            type="datetime-local"
-            id="datetime-local"
-            className="form-control"
-            value={selectedDateTime}
-            onChange={(e) => setSelectedDateTime(e.target.value)}
-          />
-          {selectedDateTime && (
+          <div className="datepicker-inline-wrapper">
+            <DatePicker
+              selected={inlineDate}
+              onChange={(date) => setInlineDate(date)}
+              inline
+              locale="es"
+              showMonthDropdown
+              showYearDropdown
+              dropdownMode="select"
+              calendarClassName="datepicker-inline"
+            />
+          </div>
+          {inlineDate && (
             <small className="form-text">
-              Seleccionado: {new Date(selectedDateTime).toLocaleString('es-CL', {
+              Seleccionado: {inlineDate.toLocaleDateString('es-CL', {
                 weekday: 'long',
                 year: 'numeric',
                 month: 'long',
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
+                day: 'numeric'
               })}
             </small>
           )}
         </div>
-
-        <div className="form-group">
-          <label htmlFor="datetime-min" className="form-label">
-            Programar viaje (mínimo 2 horas desde ahora)
-          </label>
-          <input
-            type="datetime-local"
-            id="datetime-min"
-            className="form-control"
-            min={new Date(Date.now() + 2 * 60 * 60 * 1000).toISOString().slice(0, 16)}
-          />
-        </div>
       </div>
 
       <div className="example-group">
-        <h3>Selectores Especiales</h3>
+        <h3>Personalización Visual</h3>
+        
         <div className="form-group">
-          <label htmlFor="month-picker" className="form-label">
-            Selector de mes
-          </label>
-          <input
-            type="month"
-            id="month-picker"
-            className="form-control"
-            value={selectedMonth}
-            onChange={(e) => setSelectedMonth(e.target.value)}
-          />
-          {selectedMonth && (
-            <small className="form-text">
-              Mes seleccionado: {new Date(selectedMonth + '-01').toLocaleDateString('es-CL', {
-                year: 'numeric',
-                month: 'long'
-              })}
-            </small>
-          )}
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="week-picker" className="form-label">
-            Selector de semana
-          </label>
-          <input
-            type="week"
-            id="week-picker"
-            className="form-control"
-            value={selectedWeek}
-            onChange={(e) => setSelectedWeek(e.target.value)}
-          />
-          {selectedWeek && (
-            <small className="form-text">
-              Semana seleccionada: {selectedWeek}
-            </small>
-          )}
-        </div>
-      </div>
-
-      <div className="example-group">
-        <h3>Rango de Fechas</h3>
-        <div className="date-range-container">
-          <div className="form-group">
-            <label htmlFor="date-start" className="form-label">
-              Fecha de inicio
-            </label>
-            <input
-              type="date"
-              id="date-start"
-              className="form-control"
-              value={dateRange.start}
-              onChange={(e) => setDateRange({ ...dateRange, start: e.target.value })}
-              max={dateRange.end || undefined}
-            />
-          </div>
-          
-          <div className="date-range-separator">
-            <i className="fas fa-arrow-right"></i>
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="date-end" className="form-label">
-              Fecha de fin
-            </label>
-            <input
-              type="date"
-              id="date-end"
-              className="form-control"
-              value={dateRange.end}
-              onChange={(e) => setDateRange({ ...dateRange, end: e.target.value })}
-              min={dateRange.start || undefined}
-            />
-          </div>
-        </div>
-        {dateRange.start && dateRange.end && (
-          <small className="form-text text-success">
-            <i className="fas fa-check-circle"></i> Rango: {' '}
-            {new Date(dateRange.start).toLocaleDateString('es-CL')} - {' '}
-            {new Date(dateRange.end).toLocaleDateString('es-CL')}
-            {' '}({Math.ceil((new Date(dateRange.end) - new Date(dateRange.start)) / (1000 * 60 * 60 * 24))} días)
-          </small>
-        )}
-      </div>
-
-      <div className="example-group">
-        <h3>Selectores con Iconos y Estados</h3>
-        <div className="form-group">
-          <label htmlFor="date-icon" className="form-label">
-            Con icono de calendario
+          <label className="form-label">
+            Con icono personalizado
           </label>
           <div className="input-with-icon">
-            <input
-              type="date"
-              id="date-icon"
-              className="form-control"
-              placeholder="Seleccionar fecha"
+            <DatePicker
+              selected={null}
+              onChange={(date) => {}}
+              className="form-control with-icon"
+              placeholderText="Fecha con icono"
+              dateFormat="dd/MM/yyyy"
+              locale="es"
+              showPopperArrow={false}
             />
             <div className="input-icon-left">
               <i className="fas fa-calendar-alt"></i>
@@ -268,67 +281,63 @@ function DateTimePickers() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="time-icon" className="form-label">
-            Con icono de reloj
+          <label className="form-label">
+            Tamaño pequeño
           </label>
-          <div className="input-with-icon">
-            <input
-              type="time"
-              id="time-icon"
-              className="form-control"
-            />
-            <div className="input-icon-left">
-              <i className="fas fa-clock"></i>
-            </div>
-          </div>
+          <DatePicker
+            selected={null}
+            onChange={(date) => {}}
+            className="form-control form-control-sm"
+            placeholderText="Selector pequeño"
+            dateFormat="dd/MM/yyyy"
+            locale="es"
+            showPopperArrow={false}
+          />
         </div>
 
         <div className="form-group">
-          <label htmlFor="date-disabled" className="form-label">
+          <label className="form-label">
+            Tamaño grande
+          </label>
+          <DatePicker
+            selected={null}
+            onChange={(date) => {}}
+            className="form-control form-control-lg"
+            placeholderText="Selector grande"
+            dateFormat="dd/MM/yyyy"
+            locale="es"
+            showPopperArrow={false}
+          />
+        </div>
+
+        <div className="form-group">
+          <label className="form-label">
             Deshabilitado
           </label>
-          <input
-            type="date"
-            id="date-disabled"
+          <DatePicker
+            selected={new Date()}
+            onChange={(date) => {}}
             className="form-control"
+            dateFormat="dd/MM/yyyy"
+            locale="es"
             disabled
-            value={today}
+            showPopperArrow={false}
           />
         </div>
 
         <div className="form-group">
-          <label htmlFor="date-readonly" className="form-label">
+          <label className="form-label">
             Solo lectura
           </label>
-          <input
-            type="date"
-            id="date-readonly"
+          <DatePicker
+            selected={new Date()}
+            onChange={(date) => {}}
             className="form-control"
+            dateFormat="dd/MM/yyyy"
+            locale="es"
             readOnly
-            value={today}
+            showPopperArrow={false}
           />
-        </div>
-      </div>
-
-      <div className="example-group">
-        <h3>Diseño Responsivo</h3>
-        <div className="datetime-grid">
-          <div className="form-group">
-            <label className="form-label">Fecha de salida</label>
-            <input type="date" className="form-control" />
-          </div>
-          <div className="form-group">
-            <label className="form-label">Hora de salida</label>
-            <input type="time" className="form-control" />
-          </div>
-          <div className="form-group">
-            <label className="form-label">Fecha de regreso</label>
-            <input type="date" className="form-control" />
-          </div>
-          <div className="form-group">
-            <label className="form-label">Hora de regreso</label>
-            <input type="time" className="form-control" />
-          </div>
         </div>
       </div>
     </section>
