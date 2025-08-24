@@ -40,7 +40,8 @@ mds/
 # Examples and screenshots
 examples/
 
-# Backup files
+# Backup files and folders
+backup/
 *.backup
 *.bak
 *-backup-*
